@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAYdxJREFUeF7t3Xd4FFeeL/xWFsoRBYKEcgCJjDI5ZxBBZDA4kUx2AIxxtnHGGLBx
+        DAAACwwBP0AiyAAAYdxJREFUeF7t3Xd4FFeeL/xWFsoRBYKEcgCJjDI5ZxBBZDA4kUx2AIxxtnHGGLBx
         wmCMA845jnMCe8Zje8Yeh5nZ++6+u/veZ+/e3blzd3bP+5xmG5fOr7pOdXdVd1Wf7+95Pv9Iquqqo65z
         vmrVOeXxoFAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQK
         hUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVSoRo9Hs+bHo/nLx6PhwEAALjQP3o8niMej6enOMih
@@ -6666,7 +6666,7 @@
         AAAAAAAAQIb/D6uUnGERxwQMAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnexit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAABRfSURBVHhe7dlPy61necZhP1WHNdpJNO3IRhEsWLBULP16
@@ -6759,4 +6759,7 @@
         JEmSJEmSJEmSJEmSJEmSJEmSpB37f19C/kXyotahAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="guna2ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

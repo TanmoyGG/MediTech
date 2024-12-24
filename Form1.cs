@@ -41,5 +41,10 @@ namespace MediTech
         {
 
         }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
