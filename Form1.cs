@@ -55,10 +55,16 @@ namespace MediTech
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "MediTech" && txtPasword.Text == "password")
+            if (txtUserName.Text == "admin" && txtPasword.Text == "admin")
             {
                 Adminstrator a = new Adminstrator();
                 a.Show();
+                this.Hide();
+            }
+            else if (txtUserName.Text == "pharmacist" && txtPasword.Text == "pharmacist")
+            {
+                Pharmacist p = new Pharmacist();
+                p.Show();
                 this.Hide();
             }
             else

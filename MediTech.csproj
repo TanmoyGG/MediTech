@@ -77,6 +77,12 @@
     <Compile Include="AministratorUC\UC_Profile.Designer.cs">
       <DependentUpon>UC_Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="AministratorUC\UC_SalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AministratorUC\UC_SalesReport.Designer.cs">
+      <DependentUpon>UC_SalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="AministratorUC\UC_ViewUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacist.Designer.cs">
+      <DependentUpon>Pharmacist.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,11 +115,17 @@
     <EmbeddedResource Include="AministratorUC\UC_Profile.resx">
       <DependentUpon>UC_Profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AministratorUC\UC_SalesReport.resx">
+      <DependentUpon>UC_SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AministratorUC\UC_ViewUser.resx">
       <DependentUpon>UC_ViewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacist.resx">
+      <DependentUpon>Pharmacist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

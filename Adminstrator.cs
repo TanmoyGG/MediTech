@@ -52,6 +52,7 @@ namespace MediTech
             uC_AddUser1.Visible = false;
             uC_ViewUser1.Visible = false;
             uC_Profile1.Visible = false;
+            uC_SalesReport1.Visible = false;
             btnDashBoard.PerformClick();
         }
 
@@ -71,6 +72,17 @@ namespace MediTech
         {
             uC_Profile1.Visible = true;
             uC_Profile1.BringToFront();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalesReport_Click(object sender, EventArgs e)
+        {
+            uC_SalesReport1.Visible = true;
+            uC_SalesReport1.BringToFront();
         }
     }
 }
