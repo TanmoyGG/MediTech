@@ -19,7 +19,8 @@ namespace MediTech
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-
+            uC_Profile1.Visible = true;
+            uC_Profile1.BringToFront();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -50,6 +51,7 @@ namespace MediTech
             uC_Dashboard1.Visible = false;
             uC_AddUser1.Visible = false;
             uC_ViewUser1.Visible = false;
+            uC_Profile1.Visible = false;
             btnDashBoard.PerformClick();
         }
 
@@ -63,6 +65,12 @@ namespace MediTech
         {
             uC_ViewUser1.Visible = true;
             uC_ViewUser1.BringToFront();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            uC_Profile1.Visible = true;
+            uC_Profile1.BringToFront();
         }
     }
 }
