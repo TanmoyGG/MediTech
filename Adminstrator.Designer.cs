@@ -45,6 +45,8 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_AddUser1 = new MediTech.AministratorUC.UC_AddUser();
             this.uC_Dashboard1 = new MediTech.AministratorUC.UC_Dashboard();
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_ViewUser1 = new MediTech.AministratorUC.UC_ViewUser();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -167,6 +169,7 @@
             this.btnViewUser.Size = new System.Drawing.Size(231, 45);
             this.btnViewUser.TabIndex = 4;
             this.btnViewUser.Text = "View User";
+            this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
             // 
             // btnAddUser
             // 
@@ -241,6 +244,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.uC_ViewUser1);
             this.panel2.Controls.Add(this.uC_AddUser1);
             this.panel2.Controls.Add(this.uC_Dashboard1);
             this.panel2.Location = new System.Drawing.Point(379, 0);
@@ -272,6 +276,14 @@
             this.uC_Dashboard1.Name = "uC_Dashboard1";
             this.uC_Dashboard1.Size = new System.Drawing.Size(758, 627);
             this.uC_Dashboard1.TabIndex = 0;
+            // 
+            // uC_ViewUser1
+            // 
+            this.uC_ViewUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_ViewUser1.Location = new System.Drawing.Point(0, 0);
+            this.uC_ViewUser1.Name = "uC_ViewUser1";
+            this.uC_ViewUser1.Size = new System.Drawing.Size(758, 627);
+            this.uC_ViewUser1.TabIndex = 2;
             // 
             // Adminstrator
             // 
@@ -311,5 +323,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private AministratorUC.UC_Dashboard uC_Dashboard1;
         private AministratorUC.UC_AddUser uC_AddUser1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private AministratorUC.UC_ViewUser uC_ViewUser1;
     }
 }

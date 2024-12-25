@@ -49,6 +49,7 @@ namespace MediTech
         {
             uC_Dashboard1.Visible = false;
             uC_AddUser1.Visible = false;
+            uC_ViewUser1.Visible = false;
             btnDashBoard.PerformClick();
         }
 
@@ -56,6 +57,12 @@ namespace MediTech
         {
             uC_AddUser1.Visible = true;
             uC_AddUser1.BringToFront();
+        }
+
+        private void btnViewUser_Click(object sender, EventArgs e)
+        {
+            uC_ViewUser1.Visible = true;
+            uC_ViewUser1.BringToFront();
         }
     }
 }

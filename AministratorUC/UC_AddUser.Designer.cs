@@ -302,6 +302,7 @@
             // btnReset
             // 
             this.btnReset.BorderRadius = 19;
+            this.btnReset.BorderThickness = 1;
             this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -327,6 +328,7 @@
             // btnSignUp
             // 
             this.btnSignUp.BorderRadius = 19;
+            this.btnSignUp.BorderThickness = 1;
             this.btnSignUp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSignUp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSignUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
