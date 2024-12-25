@@ -42,9 +42,29 @@ namespace MediTech
 
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
+        private void btnExit_Click_1(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtUserName.Clear();
+            txtPasword.Clear();
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "MediTech" && txtPasword.Text == "password")
+            {
+                Adminstrator a = new Adminstrator();
+                a.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }
