@@ -41,5 +41,10 @@ namespace MediTech.AministratorUC
         {
 
         }
+
+        private void UC_Profile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

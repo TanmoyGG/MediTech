@@ -349,6 +349,7 @@
             this.btnSignUp.TabIndex = 19;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // label9
             // 
@@ -389,6 +390,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UC_AddUser";
             this.Size = new System.Drawing.Size(758, 627);
+            this.Load += new System.EventHandler(this.UC_AddUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -33,5 +33,15 @@ namespace MediTech.AministratorUC
         {
 
         }
+
+        private void UC_AddUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
