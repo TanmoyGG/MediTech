@@ -53,40 +53,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministratorUC\UcPharmacists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdministratorUC\UcPharmacists.Designer.cs">
+      <DependentUpon>UcPharmacists.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adminstrator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Adminstrator.Designer.cs">
       <DependentUpon>Adminstrator.cs</DependentUpon>
     </Compile>
-    <Compile Include="AministratorUC\UC_AddUser.cs">
+    <Compile Include="AdministratorUC\UC_AddUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AministratorUC\UC_AddUser.Designer.cs">
+    <Compile Include="AdministratorUC\UC_AddUser.Designer.cs">
       <DependentUpon>UC_AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AministratorUC\UC_Dashboard.cs">
+    <Compile Include="AdministratorUC\UC_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AministratorUC\UC_Dashboard.Designer.cs">
+    <Compile Include="AdministratorUC\UC_Dashboard.Designer.cs">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="AministratorUC\UC_Profile.cs">
+    <Compile Include="AdministratorUC\UC_Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AministratorUC\UC_Profile.Designer.cs">
+    <Compile Include="AdministratorUC\UC_Profile.Designer.cs">
       <DependentUpon>UC_Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="AministratorUC\UC_SalesReport.cs">
+    <Compile Include="AdministratorUC\UC_SalesReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AministratorUC\UC_SalesReport.Designer.cs">
+    <Compile Include="AdministratorUC\UC_SalesReport.Designer.cs">
       <DependentUpon>UC_SalesReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="AministratorUC\UC_ViewUser.cs">
+    <Compile Include="AdministratorUC\UC_ViewUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AministratorUC\UC_ViewUser.Designer.cs">
+    <Compile Include="AdministratorUC\UC_ViewUser.Designer.cs">
       <DependentUpon>UC_ViewUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -103,22 +109,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministratorUC\UcPharmacists.resx">
+      <DependentUpon>UcPharmacists.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adminstrator.resx">
       <DependentUpon>Adminstrator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AministratorUC\UC_AddUser.resx">
+    <EmbeddedResource Include="AdministratorUC\UC_AddUser.resx">
       <DependentUpon>UC_AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AministratorUC\UC_Dashboard.resx">
+    <EmbeddedResource Include="AdministratorUC\UC_Dashboard.resx">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AministratorUC\UC_Profile.resx">
+    <EmbeddedResource Include="AdministratorUC\UC_Profile.resx">
       <DependentUpon>UC_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AministratorUC\UC_SalesReport.resx">
+    <EmbeddedResource Include="AdministratorUC\UC_SalesReport.resx">
       <DependentUpon>UC_SalesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AministratorUC\UC_ViewUser.resx">
+    <EmbeddedResource Include="AdministratorUC\UC_ViewUser.resx">
       <DependentUpon>UC_ViewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">

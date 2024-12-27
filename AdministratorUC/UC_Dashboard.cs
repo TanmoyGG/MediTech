@@ -1,25 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MediTech.AministratorUC
+namespace MediTech.AdministratorUC
 {
-    public partial class UC_Dashboard : UserControl
+    public partial class UcDashboard : UserControl
     {
-        public UC_Dashboard()
+        public UcDashboard()
         {
             InitializeComponent();
         }
 
         private void UC_Dashboard_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

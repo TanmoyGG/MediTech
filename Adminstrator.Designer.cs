@@ -1,4 +1,6 @@
-﻿namespace MediTech
+﻿using MediTech.AdministratorUC;
+
+namespace MediTech
 {
     partial class Adminstrator
     {
@@ -31,76 +33,139 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adminstrator));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPharmacist = new Guna.UI2.WinForms.Guna2Button();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSalesReport = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMedicine = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashBoard = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_Profile1 = new MediTech.AministratorUC.UC_Profile();
-            this.uC_ViewUser1 = new MediTech.AministratorUC.UC_ViewUser();
-            this.uC_AddUser1 = new MediTech.AministratorUC.UC_AddUser();
-            this.uC_Dashboard1 = new MediTech.AministratorUC.UC_Dashboard();
+            this.uC_SalesReport1 = new MediTech.AdministratorUC.UcSalesReport();
+            this.uC_Profile1 = new MediTech.AdministratorUC.UcProfile();
+            this.uC_ViewUser1 = new MediTech.AdministratorUC.UcViewUser();
+            this.uC_AddUser1 = new MediTech.AdministratorUC.UcAddUser();
+            this.uC_Dashboard1 = new MediTech.AdministratorUC.UcDashboard();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnMedicine = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSalesReport = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.uC_SalesReport1 = new MediTech.AministratorUC.UC_SalesReport();
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ucPharmacists1 = new MediTech.AdministratorUC.UcPharmacists();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.panel1.Controls.Add(this.btnPharmacist);
+            this.panel1.Controls.Add(this.btnProfile);
             this.panel1.Controls.Add(this.btnSalesReport);
             this.panel1.Controls.Add(this.btnMedicine);
-            this.panel1.Controls.Add(this.btnProfile);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnViewUser);
             this.panel1.Controls.Add(this.btnAddUser);
             this.panel1.Controls.Add(this.btnDashBoard);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(381, 627);
             this.panel1.TabIndex = 0;
             // 
+            // btnPharmacist
+            // 
+            this.btnPharmacist.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPharmacist.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPharmacist.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPharmacist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPharmacist.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPharmacist.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.btnPharmacist.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPharmacist.ForeColor = System.Drawing.Color.White;
+            this.btnPharmacist.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnPharmacist.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
+            this.btnPharmacist.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnPharmacist.Image = ((System.Drawing.Image)(resources.GetObject("btnPharmacist.Image")));
+            this.btnPharmacist.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPharmacist.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.btnPharmacist.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnPharmacist.Location = new System.Drawing.Point(150, 275);
+            this.btnPharmacist.Name = "btnPharmacist";
+            this.btnPharmacist.Size = new System.Drawing.Size(231, 45);
+            this.btnPharmacist.TabIndex = 11;
+            this.btnPharmacist.Text = "Pharmacists";
+            this.btnPharmacist.Click += new System.EventHandler(this.btnPharmacist_Click);
+            // 
             // btnProfile
             // 
-            this.btnProfile.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnProfile.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.btnProfile.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnProfile.BorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProfile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.btnProfile.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.FillColor = System.Drawing.Color.Transparent;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnProfile.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
-            this.btnProfile.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnProfile.HoverState.ForeColor = System.Drawing.Color.Transparent;
             this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
-            this.btnProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnProfile.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnProfile.Location = new System.Drawing.Point(148, 278);
+            this.btnProfile.ImageSize = new System.Drawing.Size(220, 220);
+            this.btnProfile.Location = new System.Drawing.Point(51, 7);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(231, 45);
-            this.btnProfile.TabIndex = 7;
-            this.btnProfile.Text = "Profile";
+            this.btnProfile.Size = new System.Drawing.Size(220, 164);
+            this.btnProfile.TabIndex = 10;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // btnSalesReport
+            // 
+            this.btnSalesReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSalesReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSalesReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSalesReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSalesReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSalesReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.btnSalesReport.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalesReport.ForeColor = System.Drawing.Color.White;
+            this.btnSalesReport.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnSalesReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
+            this.btnSalesReport.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSalesReport.Location = new System.Drawing.Point(150, 533);
+            this.btnSalesReport.Name = "btnSalesReport";
+            this.btnSalesReport.Size = new System.Drawing.Size(231, 45);
+            this.btnSalesReport.TabIndex = 9;
+            this.btnSalesReport.Text = "Sales Report";
+            this.btnSalesReport.Click += new System.EventHandler(this.btnSalesReport_Click);
+            // 
+            // btnMedicine
+            // 
+            this.btnMedicine.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnMedicine.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.btnMedicine.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnMedicine.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMedicine.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMedicine.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMedicine.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMedicine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.btnMedicine.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedicine.ForeColor = System.Drawing.Color.White;
+            this.btnMedicine.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnMedicine.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
+            this.btnMedicine.Location = new System.Drawing.Point(150, 460);
+            this.btnMedicine.Name = "btnMedicine";
+            this.btnMedicine.Size = new System.Drawing.Size(231, 45);
+            this.btnMedicine.TabIndex = 8;
+            this.btnMedicine.Text = "Medicine";
             // 
             // label2
             // 
@@ -112,23 +177,6 @@
             this.label2.Size = new System.Drawing.Size(94, 26);
             this.label2.TabIndex = 6;
             this.label2.Text = "MediTech";
-            // 
-            // btnExit
-            // 
-            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExit.FillColor = System.Drawing.Color.Transparent;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnExit.Location = new System.Drawing.Point(329, 74);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 23);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btnLogOut
             // 
@@ -182,6 +230,7 @@
             // btnAddUser
             // 
             this.btnAddUser.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAddUser.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnAddUser.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
             this.btnAddUser.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.btnAddUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -234,25 +283,16 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(100, 170);
+            this.label1.Location = new System.Drawing.Point(89, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Administrator";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(75, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 178);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ucPharmacists1);
             this.panel2.Controls.Add(this.uC_SalesReport1);
             this.panel2.Controls.Add(this.uC_Profile1);
             this.panel2.Controls.Add(this.uC_ViewUser1);
@@ -263,6 +303,14 @@
             this.panel2.Size = new System.Drawing.Size(758, 627);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // uC_SalesReport1
+            // 
+            this.uC_SalesReport1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_SalesReport1.Location = new System.Drawing.Point(0, 0);
+            this.uC_SalesReport1.Name = "uC_SalesReport1";
+            this.uC_SalesReport1.Size = new System.Drawing.Size(758, 627);
+            this.uC_SalesReport1.TabIndex = 4;
             // 
             // uC_Profile1
             // 
@@ -312,57 +360,21 @@
             // 
             this.guna2Elipse4.TargetControl = this.panel2;
             // 
-            // btnMedicine
-            // 
-            this.btnMedicine.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnMedicine.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.btnMedicine.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnMedicine.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMedicine.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMedicine.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMedicine.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMedicine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.btnMedicine.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedicine.ForeColor = System.Drawing.Color.White;
-            this.btnMedicine.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnMedicine.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
-            this.btnMedicine.Location = new System.Drawing.Point(150, 460);
-            this.btnMedicine.Name = "btnMedicine";
-            this.btnMedicine.Size = new System.Drawing.Size(231, 45);
-            this.btnMedicine.TabIndex = 8;
-            this.btnMedicine.Text = "Medicine";
-            // 
-            // btnSalesReport
-            // 
-            this.btnSalesReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnSalesReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSalesReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSalesReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSalesReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSalesReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.btnSalesReport.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalesReport.ForeColor = System.Drawing.Color.White;
-            this.btnSalesReport.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnSalesReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
-            this.btnSalesReport.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSalesReport.Location = new System.Drawing.Point(150, 533);
-            this.btnSalesReport.Name = "btnSalesReport";
-            this.btnSalesReport.Size = new System.Drawing.Size(231, 45);
-            this.btnSalesReport.TabIndex = 9;
-            this.btnSalesReport.Text = "Sales Report";
-            this.btnSalesReport.Click += new System.EventHandler(this.btnSalesReport_Click);
-            // 
             // guna2Elipse5
             // 
             this.guna2Elipse5.TargetControl = this.panel2;
             // 
-            // uC_SalesReport1
+            // guna2Elipse6
             // 
-            this.uC_SalesReport1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.uC_SalesReport1.Location = new System.Drawing.Point(0, 0);
-            this.uC_SalesReport1.Name = "uC_SalesReport1";
-            this.uC_SalesReport1.Size = new System.Drawing.Size(758, 627);
-            this.uC_SalesReport1.TabIndex = 4;
+            this.guna2Elipse6.TargetControl = this.panel2;
+            // 
+            // ucPharmacists1
+            // 
+            this.ucPharmacists1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.ucPharmacists1.Location = new System.Drawing.Point(0, 0);
+            this.ucPharmacists1.Name = "ucPharmacists1";
+            this.ucPharmacists1.Size = new System.Drawing.Size(758, 627);
+            this.ucPharmacists1.TabIndex = 5;
             // 
             // Adminstrator
             // 
@@ -379,7 +391,6 @@
             this.Load += new System.EventHandler(this.Adminstrator_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -388,27 +399,28 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnDashBoard;
         private Guna.UI2.WinForms.Guna2Button btnViewUser;
         private Guna.UI2.WinForms.Guna2Button btnAddUser;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private AministratorUC.UC_Dashboard uC_Dashboard1;
-        private AministratorUC.UC_AddUser uC_AddUser1;
+        private UcDashboard uC_Dashboard1;
+        private UcAddUser uC_AddUser1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
-        private AministratorUC.UC_ViewUser uC_ViewUser1;
-        private Guna.UI2.WinForms.Guna2Button btnProfile;
+        private UcViewUser uC_ViewUser1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
-        private AministratorUC.UC_Profile uC_Profile1;
+        private UcProfile uC_Profile1;
         private Guna.UI2.WinForms.Guna2Button btnMedicine;
         private Guna.UI2.WinForms.Guna2Button btnSalesReport;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
-        private AministratorUC.UC_SalesReport uC_SalesReport1;
+        private UcSalesReport uC_SalesReport1;
+        private Guna.UI2.WinForms.Guna2Button btnProfile;
+        private Guna.UI2.WinForms.Guna2Button btnPharmacist;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+        private UcPharmacists ucPharmacists1;
     }
 }

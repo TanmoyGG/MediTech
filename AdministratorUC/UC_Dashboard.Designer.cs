@@ -1,6 +1,6 @@
-﻿namespace MediTech.AministratorUC
+﻿namespace MediTech.AdministratorUC
 {
-    partial class UC_Dashboard
+    partial class UcDashboard
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcDashboard));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -214,7 +214,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Name = "UC_Dashboard";
+            this.Name = "UcDashboard";
             this.Size = new System.Drawing.Size(758, 627);
             this.Load += new System.EventHandler(this.UC_Dashboard_Load);
             this.panel1.ResumeLayout(false);

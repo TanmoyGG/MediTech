@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MediTech.AministratorUC
+namespace MediTech.AdministratorUC
 {
-    public partial class UC_AddUser : UserControl
+    public partial class UcAddUser : UserControl
     {
-        public UC_AddUser()
+        public UcAddUser()
         {
             InitializeComponent();
         }
@@ -26,22 +19,18 @@ namespace MediTech.AministratorUC
             txtEmail.Clear();
             txtUserName.Clear();
             txtPassword.Clear();
-
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void UC_AddUser_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

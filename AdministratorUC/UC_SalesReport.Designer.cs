@@ -1,6 +1,6 @@
-﻿namespace MediTech.AministratorUC
+﻿namespace MediTech.AdministratorUC
 {
-    partial class UC_SalesReport
+    partial class UcSalesReport
     {
         /// <summary> 
         /// Required designer variable.
@@ -108,7 +108,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "UC_SalesReport";
+            this.Name = "UcSalesReport";
             this.Size = new System.Drawing.Size(758, 627);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -1,0 +1,52 @@
+﻿-- Database: MediTech
+CREATE DATABASE MediTechDB;
+GO
+
+USE MediTechDB;
+GO
+
+-- Admin Table
+CREATE TABLE Admin (
+    A_Id INT PRIMARY KEY IDENTITY(1,1),
+    A_Email NVARCHAR(255) NOT NULL UNIQUE,
+    A_Name NVARCHAR(100) NOT NULL,
+    A_Dob DATE NOT NULL,
+    A_MobileNo NVARCHAR(15) NOT NULL,
+    A_UserName NVARCHAR(50) NOT NULL UNIQUE,
+    A_Password NVARCHAR(255) NOT NULL
+);
+
+-- Pharmacist Table
+CREATE TABLE Pharmacist (
+    P_Id INT PRIMARY KEY IDENTITY(1,1),
+    P_Email NVARCHAR(255) NOT NULL UNIQUE,
+    P_Name NVARCHAR(100) NOT NULL,
+    P_Dob DATE NOT NULL,
+    P_MobileNo NVARCHAR(15) NOT NULL,
+    P_UserName NVARCHAR(50) NOT NULL UNIQUE,
+    P_Password NVARCHAR(255) NOT NULL
+);
+
+-- Medicine Table
+CREATE TABLE Medicine (
+    M_Id INT PRIMARY KEY IDENTITY(1,1),
+    M_Name NVARCHAR(100) NOT NULL,
+    M_GroupName NVARCHAR(100),
+    M_Type NVARCHAR(50),
+    Price DECIMAL(10, 2) NOT NULL,
+    ManuDate DATE NOT NULL,
+    ExpDate DATE NOT NULL,
+    Quantity INT NOT NULL
+);
+
+-- Sales Report Table
+CREATE TABLE SalesReport (
+    Report_Id INT PRIMARY KEY IDENTITY(1,1),
+    ReportDateTime DATETIME DEFAULT GETDATE(),
+    M_Id INT NOT NULL,
+    M_Name NVARCHAR(100) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    P_Name NVARCHAR(100) NOT NULL,
+    FOREIGN KEY (M_Id) REFERENCES Medicine(M_Id)
+);
+

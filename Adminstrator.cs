@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MediTech
@@ -17,27 +10,15 @@ namespace MediTech
             InitializeComponent();
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            uC_Profile1.Visible = true;
-            uC_Profile1.BringToFront();
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            Form1 fm = new Form1();
+            var fm = new Form1();
             fm.Show();
-            this.Hide();
+            Hide();
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
@@ -53,6 +34,7 @@ namespace MediTech
             uC_ViewUser1.Visible = false;
             uC_Profile1.Visible = false;
             uC_SalesReport1.Visible = false;
+            ucPharmacists1.Visible = false;
             btnDashBoard.PerformClick();
         }
 
@@ -68,21 +50,26 @@ namespace MediTech
             uC_ViewUser1.BringToFront();
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            uC_Profile1.Visible = true;
-            uC_Profile1.BringToFront();
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnSalesReport_Click(object sender, EventArgs e)
         {
             uC_SalesReport1.Visible = true;
             uC_SalesReport1.BringToFront();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            uC_Profile1.Visible = true;
+            uC_Profile1.BringToFront();
+        }
+
+        private void btnPharmacist_Click(object sender, EventArgs e)
+        {
+            ucPharmacists1.Visible = true;
+            ucPharmacists1.BringToFront();
         }
     }
 }

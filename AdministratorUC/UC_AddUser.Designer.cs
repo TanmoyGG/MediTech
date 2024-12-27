@@ -1,6 +1,6 @@
-﻿namespace MediTech.AministratorUC
+﻿namespace MediTech.AdministratorUC
 {
-    partial class UC_AddUser
+    partial class UcAddUser
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AddUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAddUser));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -388,7 +388,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Name = "UC_AddUser";
+            this.Name = "UcAddUser";
             this.Size = new System.Drawing.Size(758, 627);
             this.Load += new System.EventHandler(this.UC_AddUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
