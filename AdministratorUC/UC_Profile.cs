@@ -36,7 +36,12 @@ namespace MediTech.AdministratorUC
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            txtUserRole.Clear();
+            txtName.Clear();
+            txtDOB.Clear();
+            txtMobileNo.Clear();
+            txtEmail.Clear();
+            txtPassword.Clear();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -47,6 +52,11 @@ namespace MediTech.AdministratorUC
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUserRole_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

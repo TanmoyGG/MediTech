@@ -111,6 +111,7 @@ namespace MediTech
             this.btnProfile.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnProfile.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnProfile.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

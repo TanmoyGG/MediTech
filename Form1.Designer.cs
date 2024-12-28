@@ -64,12 +64,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(64, 85);
+            this.label1.Location = new System.Drawing.Point(44, 85);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 118);
+            this.label1.Size = new System.Drawing.Size(281, 118);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MediTech \r\n  Pharma";
+            this.label1.Text = "MediTech \r\n         Pharma";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2

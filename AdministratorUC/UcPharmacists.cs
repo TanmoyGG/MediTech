@@ -46,5 +46,15 @@ namespace MediTech.AdministratorUC
         {
             Application.Exit();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            txtName.Clear();
+            txtDOB.Clear();
+            txtMobileNo.Clear();
+            txtEmail.Clear();
+            txtPassword.Clear();
+        }
     }
 }
