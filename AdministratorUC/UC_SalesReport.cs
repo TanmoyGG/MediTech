@@ -8,5 +8,10 @@ namespace MediTech.AdministratorUC
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

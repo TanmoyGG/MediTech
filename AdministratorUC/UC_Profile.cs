@@ -33,5 +33,20 @@ namespace MediTech.AdministratorUC
         private void UC_Profile_Load(object sender, EventArgs e)
         {
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

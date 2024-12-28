@@ -44,6 +44,7 @@ namespace MediTech
             this.btnDashBoard = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ucPharmacists1 = new MediTech.AdministratorUC.UcPharmacists();
             this.uC_SalesReport1 = new MediTech.AdministratorUC.UcSalesReport();
             this.uC_Profile1 = new MediTech.AdministratorUC.UcProfile();
             this.uC_ViewUser1 = new MediTech.AdministratorUC.UcViewUser();
@@ -55,7 +56,6 @@ namespace MediTech
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ucPharmacists1 = new MediTech.AdministratorUC.UcPharmacists();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,8 @@ namespace MediTech
             // btnPharmacist
             // 
             this.btnPharmacist.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPharmacist.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.btnPharmacist.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.btnPharmacist.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPharmacist.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPharmacist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -105,6 +107,7 @@ namespace MediTech
             // btnProfile
             // 
             this.btnProfile.BorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnProfile.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnProfile.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnProfile.CheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -172,7 +175,7 @@ namespace MediTech
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.label2.Location = new System.Drawing.Point(3, 598);
+            this.label2.Location = new System.Drawing.Point(12, 294);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 26);
             this.label2.TabIndex = 6;
@@ -194,9 +197,9 @@ namespace MediTech
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLogOut.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLogOut.Location = new System.Drawing.Point(0, 448);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 590);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(132, 45);
+            this.btnLogOut.Size = new System.Drawing.Size(120, 34);
             this.btnLogOut.TabIndex = 1;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -304,6 +307,14 @@ namespace MediTech
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // ucPharmacists1
+            // 
+            this.ucPharmacists1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.ucPharmacists1.Location = new System.Drawing.Point(0, 0);
+            this.ucPharmacists1.Name = "ucPharmacists1";
+            this.ucPharmacists1.Size = new System.Drawing.Size(758, 627);
+            this.ucPharmacists1.TabIndex = 5;
+            // 
             // uC_SalesReport1
             // 
             this.uC_SalesReport1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
@@ -367,14 +378,6 @@ namespace MediTech
             // guna2Elipse6
             // 
             this.guna2Elipse6.TargetControl = this.panel2;
-            // 
-            // ucPharmacists1
-            // 
-            this.ucPharmacists1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.ucPharmacists1.Location = new System.Drawing.Point(0, 0);
-            this.ucPharmacists1.Name = "ucPharmacists1";
-            this.ucPharmacists1.Size = new System.Drawing.Size(758, 627);
-            this.ucPharmacists1.TabIndex = 5;
             // 
             // Adminstrator
             // 

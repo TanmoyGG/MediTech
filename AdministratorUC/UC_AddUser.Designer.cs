@@ -51,6 +51,7 @@
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.btnSignUp = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,11 +364,30 @@
             this.label9.Text = "*Check \"User Role\" once before sign up!!";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // UC_AddUser
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnExit.Location = new System.Drawing.Point(730, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(25, 23);
+            this.btnExit.TabIndex = 21;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // UcAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnReset);
@@ -420,5 +440,6 @@
         private Guna.UI2.WinForms.Guna2Button btnReset;
         private Guna.UI2.WinForms.Guna2Button btnSignUp;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

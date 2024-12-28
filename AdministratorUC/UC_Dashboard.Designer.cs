@@ -190,6 +190,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
             this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -203,8 +204,9 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(25, 23);
             this.btnExit.TabIndex = 4;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // UC_Dashboard
+            // UcDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
