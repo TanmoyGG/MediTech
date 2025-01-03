@@ -44,18 +44,18 @@ namespace MediTech
             this.btnDashBoard = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ucPharmacists1 = new MediTech.AdministratorUC.UcPharmacists();
-            this.uC_SalesReport1 = new MediTech.AdministratorUC.UcSalesReport();
-            this.uC_Profile1 = new MediTech.AdministratorUC.UcProfile();
-            this.uC_ViewUser1 = new MediTech.AdministratorUC.UcViewUser();
-            this.uC_AddUser1 = new MediTech.AdministratorUC.UcAddUser();
-            this.uC_Dashboard1 = new MediTech.AdministratorUC.UcDashboard();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ucPharmacists1 = new MediTech.AdministratorUC.UcPharmacists();
+            this.uC_SalesReport1 = new MediTech.AdministratorUC.UcSalesReport();
+            this.uC_Profile1 = new MediTech.AdministratorUC.UcProfile();
+            this.uC_ViewUser1 = new MediTech.AdministratorUC.UcViewUser();
+            this.uC_AddUser1 = new MediTech.AdministratorUC.UcAddUser();
+            this.uC_Dashboard1 = new MediTech.AdministratorUC.UcDashboard();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +176,7 @@ namespace MediTech
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.label2.Location = new System.Drawing.Point(12, 294);
+            this.label2.Location = new System.Drawing.Point(284, 601);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 26);
             this.label2.TabIndex = 6;
@@ -308,6 +308,30 @@ namespace MediTech
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this.panel2;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.panel2;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.TargetControl = this.panel2;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.TargetControl = this.panel2;
+            // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.TargetControl = this.panel2;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.TargetControl = this.panel2;
+            // 
             // ucPharmacists1
             // 
             this.ucPharmacists1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
@@ -355,30 +379,6 @@ namespace MediTech
             this.uC_Dashboard1.Name = "uC_Dashboard1";
             this.uC_Dashboard1.Size = new System.Drawing.Size(758, 627);
             this.uC_Dashboard1.TabIndex = 0;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this.panel2;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.TargetControl = this.panel2;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.TargetControl = this.panel2;
-            // 
-            // guna2Elipse4
-            // 
-            this.guna2Elipse4.TargetControl = this.panel2;
-            // 
-            // guna2Elipse5
-            // 
-            this.guna2Elipse5.TargetControl = this.panel2;
-            // 
-            // guna2Elipse6
-            // 
-            this.guna2Elipse6.TargetControl = this.panel2;
             // 
             // Adminstrator
             // 
