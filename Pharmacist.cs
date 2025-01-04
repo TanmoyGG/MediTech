@@ -12,6 +12,7 @@ namespace MediTech
         private void Pharmacist_Load(object sender, System.EventArgs e)
         {
             uC_P_Dashboard1.Visible = false;
+            uC_P_AddMedicine1.Visible = false;
             btnDashboard.PerformClick();
         }
 
@@ -27,7 +28,8 @@ namespace MediTech
 
         private void btnAddMedicine_Click(object sender, System.EventArgs e)
         {
-
+            uC_P_AddMedicine1.Visible = true;
+            uC_P_AddMedicine1.BringToFront();
         }
 
         private void btnLogOut_Click(object sender, System.EventArgs e)

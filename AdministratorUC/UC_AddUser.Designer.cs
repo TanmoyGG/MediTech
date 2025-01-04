@@ -78,10 +78,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 18);
+            this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "User Role";
             // 
@@ -185,6 +185,7 @@
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(251, 36);
             this.txtName.TabIndex = 10;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtMobileNo
             // 
@@ -291,7 +292,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.panel1.Location = new System.Drawing.Point(386, 71);
+            this.panel1.Location = new System.Drawing.Point(375, 71);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(6, 523);
             this.panel1.TabIndex = 17;

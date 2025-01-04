@@ -42,6 +42,8 @@
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_P_Dashboard1 = new MediTech.PharmacistUC.UC_P_Dashboard();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_P_AddMedicine1 = new MediTech.PharmacistUC.UC_P_AddMedicine();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -219,6 +221,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.uC_P_AddMedicine1);
             this.panel2.Controls.Add(this.uC_P_Dashboard1);
             this.panel2.Location = new System.Drawing.Point(370, 0);
             this.panel2.Name = "panel2";
@@ -252,6 +255,18 @@
             this.uC_P_Dashboard1.Name = "uC_P_Dashboard1";
             this.uC_P_Dashboard1.Size = new System.Drawing.Size(767, 627);
             this.uC_P_Dashboard1.TabIndex = 0;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.panel2;
+            // 
+            // uC_P_AddMedicine1
+            // 
+            this.uC_P_AddMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_AddMedicine1.Location = new System.Drawing.Point(0, 3);
+            this.uC_P_AddMedicine1.Name = "uC_P_AddMedicine1";
+            this.uC_P_AddMedicine1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_AddMedicine1.TabIndex = 1;
             // 
             // Pharmacist
             // 
@@ -288,5 +303,7 @@
         private Guna.UI2.WinForms.Guna2Button btnProfile;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private PharmacistUC.UC_P_Dashboard uC_P_Dashboard1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private PharmacistUC.UC_P_AddMedicine uC_P_AddMedicine1;
     }
 }

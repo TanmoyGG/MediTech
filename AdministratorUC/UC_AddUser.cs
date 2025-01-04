@@ -37,5 +37,10 @@ namespace MediTech.AdministratorUC
         {
             Application.Exit();
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
