@@ -11,7 +11,8 @@ namespace MediTech
 
         private void Pharmacist_Load(object sender, System.EventArgs e)
         {
-
+            uC_P_Dashboard1.Visible = false;
+            btnDashboard.PerformClick();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -34,6 +35,17 @@ namespace MediTech
             var fm = new Form1();
             fm.Show();
             Hide();
+        }
+
+        private void btnSellMedicine_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Click(object sender, System.EventArgs e)
+        {
+            uC_P_Dashboard1.Visible = true;
+            uC_P_Dashboard1.BringToFront();
         }
     }
 }

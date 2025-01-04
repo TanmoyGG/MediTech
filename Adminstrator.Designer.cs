@@ -125,7 +125,7 @@ namespace MediTech
             this.btnProfile.HoverState.ForeColor = System.Drawing.Color.Transparent;
             this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
             this.btnProfile.ImageSize = new System.Drawing.Size(220, 220);
-            this.btnProfile.Location = new System.Drawing.Point(51, 7);
+            this.btnProfile.Location = new System.Drawing.Point(57, 7);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(220, 164);
             this.btnProfile.TabIndex = 10;
@@ -287,7 +287,7 @@ namespace MediTech
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(89, 179);
+            this.label1.Location = new System.Drawing.Point(98, 177);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 26);
             this.label1.TabIndex = 1;
