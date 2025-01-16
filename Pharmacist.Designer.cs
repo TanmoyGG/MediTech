@@ -48,6 +48,8 @@
             this.uC_P_Dashboard1 = new MediTech.PharmacistUC.UC_P_Dashboard();
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_P_SellMedicine1 = new MediTech.PharmacistUC.UC_P_SellMedicine();
+            this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ucProfile1 = new MediTech.AdministratorUC.UcProfile();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,6 +87,7 @@
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(162, 151);
             this.btnProfile.TabIndex = 7;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnLogOut
             // 
@@ -242,6 +245,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ucProfile1);
             this.panel2.Controls.Add(this.uC_P_SellMedicine1);
             this.panel2.Controls.Add(this.uC_P_ViewMedicine1);
             this.panel2.Controls.Add(this.uC_P_AddMedicine1);
@@ -299,6 +303,18 @@
             this.uC_P_SellMedicine1.Size = new System.Drawing.Size(767, 627);
             this.uC_P_SellMedicine1.TabIndex = 3;
             // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.TargetControl = this.panel2;
+            // 
+            // ucProfile1
+            // 
+            this.ucProfile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.ucProfile1.Location = new System.Drawing.Point(0, 0);
+            this.ucProfile1.Name = "ucProfile1";
+            this.ucProfile1.Size = new System.Drawing.Size(767, 627);
+            this.ucProfile1.TabIndex = 4;
+            // 
             // Pharmacist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,5 +356,7 @@
         private PharmacistUC.UC_P_ViewMedicine uC_P_ViewMedicine1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private PharmacistUC.UC_P_SellMedicine uC_P_SellMedicine1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
+        private AdministratorUC.UcProfile ucProfile1;
     }
 }

@@ -15,6 +15,7 @@ namespace MediTech
             uC_P_AddMedicine1.Visible = false;
             uC_P_ViewMedicine1.Visible = false;
             uC_P_SellMedicine1.Visible = false;
+            ucProfile1.Visible = false;
             btnDashboard.PerformClick();
         }
 
@@ -57,6 +58,12 @@ namespace MediTech
         {
             uC_P_ViewMedicine1.Visible = true;
             uC_P_ViewMedicine1.BringToFront();
+        }
+
+        private void btnProfile_Click(object sender, System.EventArgs e)
+        {
+            ucProfile1.Visible = true;
+            ucProfile1.BringToFront();
         }
     }
 }

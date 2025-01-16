@@ -60,6 +60,12 @@
     <Compile Include="AdministratorUC\UcPharmacists.Designer.cs">
       <DependentUpon>UcPharmacists.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdministratorUC\UC_Medicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdministratorUC\UC_Medicine.Designer.cs">
+      <DependentUpon>UC_Medicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adminstrator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdministratorUC\UcPharmacists.resx">
       <DependentUpon>UcPharmacists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministratorUC\UC_Medicine.resx">
+      <DependentUpon>UC_Medicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adminstrator.resx">
       <DependentUpon>Adminstrator.cs</DependentUpon>
