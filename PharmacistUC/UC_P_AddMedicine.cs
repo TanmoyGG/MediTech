@@ -17,23 +17,31 @@ namespace MediTech.PharmacistUC
             InitializeComponent();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void txtMGroupName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
         {
             txtMID.Clear();
             txtMName.Clear();
             txtMGroupName.Clear();
-            txtMType.SelectedIndex= -1;
+            txtMType.SelectedIndex = -1;
             txtManuDate.ResetText();
             txtExpDate.ResetText();
             txtPricePerUnit.Clear();
             txtQuantity.Clear();
-
-
         }
 
-        private void txtMGroupName_TextChanged(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

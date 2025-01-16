@@ -120,6 +120,12 @@
     <Compile Include="PharmacistUC\UC_P_Dashboard.Designer.cs">
       <DependentUpon>UC_P_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="PharmacistUC\UC_P_ViewMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PharmacistUC\UC_P_ViewMedicine.Designer.cs">
+      <DependentUpon>UC_P_ViewMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdministratorUC\UcPharmacists.resx">
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacistUC\UC_P_Dashboard.resx">
       <DependentUpon>UC_P_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacistUC\UC_P_ViewMedicine.resx">
+      <DependentUpon>UC_P_ViewMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
