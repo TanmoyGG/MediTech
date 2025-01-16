@@ -56,6 +56,8 @@ namespace MediTech
             this.uC_ViewUser1 = new MediTech.AdministratorUC.UcViewUser();
             this.uC_AddUser1 = new MediTech.AdministratorUC.UcAddUser();
             this.uC_Dashboard1 = new MediTech.AdministratorUC.UcDashboard();
+            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_P_ViewMedicine1 = new MediTech.PharmacistUC.UC_P_ViewMedicine();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +98,7 @@ namespace MediTech
             this.btnPharmacist.Image = ((System.Drawing.Image)(resources.GetObject("btnPharmacist.Image")));
             this.btnPharmacist.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPharmacist.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.btnPharmacist.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnPharmacist.ImageSize = new System.Drawing.Size(45, 45);
             this.btnPharmacist.Location = new System.Drawing.Point(150, 275);
             this.btnPharmacist.Name = "btnPharmacist";
             this.btnPharmacist.Size = new System.Drawing.Size(231, 45);
@@ -144,6 +146,9 @@ namespace MediTech
             this.btnSalesReport.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnSalesReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
             this.btnSalesReport.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSalesReport.Image = ((System.Drawing.Image)(resources.GetObject("btnSalesReport.Image")));
+            this.btnSalesReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSalesReport.ImageSize = new System.Drawing.Size(40, 40);
             this.btnSalesReport.Location = new System.Drawing.Point(150, 533);
             this.btnSalesReport.Name = "btnSalesReport";
             this.btnSalesReport.Size = new System.Drawing.Size(231, 45);
@@ -165,11 +170,15 @@ namespace MediTech
             this.btnMedicine.ForeColor = System.Drawing.Color.White;
             this.btnMedicine.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnMedicine.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
+            this.btnMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnMedicine.Image")));
+            this.btnMedicine.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMedicine.ImageSize = new System.Drawing.Size(32, 32);
             this.btnMedicine.Location = new System.Drawing.Point(150, 460);
             this.btnMedicine.Name = "btnMedicine";
             this.btnMedicine.Size = new System.Drawing.Size(231, 45);
             this.btnMedicine.TabIndex = 8;
             this.btnMedicine.Text = "Medicine";
+            this.btnMedicine.Click += new System.EventHandler(this.btnMedicine_Click);
             // 
             // label2
             // 
@@ -223,7 +232,7 @@ namespace MediTech
             this.btnViewUser.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnViewUser.Image = ((System.Drawing.Image)(resources.GetObject("btnViewUser.Image")));
             this.btnViewUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnViewUser.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnViewUser.ImageSize = new System.Drawing.Size(40, 40);
             this.btnViewUser.Location = new System.Drawing.Point(147, 397);
             this.btnViewUser.Name = "btnViewUser";
             this.btnViewUser.Size = new System.Drawing.Size(231, 45);
@@ -249,7 +258,7 @@ namespace MediTech
             this.btnAddUser.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
             this.btnAddUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddUser.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAddUser.ImageSize = new System.Drawing.Size(35, 35);
             this.btnAddUser.Location = new System.Drawing.Point(148, 335);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(231, 45);
@@ -274,7 +283,7 @@ namespace MediTech
             this.btnDashBoard.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
             this.btnDashBoard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDashBoard.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnDashBoard.ImageSize = new System.Drawing.Size(40, 40);
             this.btnDashBoard.Location = new System.Drawing.Point(148, 218);
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(231, 45);
@@ -296,6 +305,7 @@ namespace MediTech
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.uC_P_ViewMedicine1);
             this.panel2.Controls.Add(this.ucPharmacists1);
             this.panel2.Controls.Add(this.uC_SalesReport1);
             this.panel2.Controls.Add(this.uC_Profile1);
@@ -380,6 +390,18 @@ namespace MediTech
             this.uC_Dashboard1.Size = new System.Drawing.Size(758, 627);
             this.uC_Dashboard1.TabIndex = 0;
             // 
+            // guna2Elipse7
+            // 
+            this.guna2Elipse7.TargetControl = this.panel2;
+            // 
+            // uC_P_ViewMedicine1
+            // 
+            this.uC_P_ViewMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_ViewMedicine1.Location = new System.Drawing.Point(0, 0);
+            this.uC_P_ViewMedicine1.Name = "uC_P_ViewMedicine1";
+            this.uC_P_ViewMedicine1.Size = new System.Drawing.Size(758, 627);
+            this.uC_P_ViewMedicine1.TabIndex = 6;
+            // 
             // Adminstrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,5 +448,7 @@ namespace MediTech
         private Guna.UI2.WinForms.Guna2Button btnPharmacist;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private UcPharmacists ucPharmacists1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private PharmacistUC.UC_P_ViewMedicine uC_P_ViewMedicine1;
     }
 }
