@@ -14,6 +14,7 @@ namespace MediTech
             uC_P_Dashboard1.Visible = false;
             uC_P_AddMedicine1.Visible = false;
             uC_P_ViewMedicine1.Visible = false;
+            uC_P_SellMedicine1.Visible = false;
             btnDashboard.PerformClick();
         }
 
@@ -42,7 +43,8 @@ namespace MediTech
 
         private void btnSellMedicine_Click(object sender, System.EventArgs e)
         {
-
+            uC_P_SellMedicine1.Visible = true;
+            uC_P_SellMedicine1.BringToFront();
         }
 
         private void btnDashboard_Click(object sender, System.EventArgs e)

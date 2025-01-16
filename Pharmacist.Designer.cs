@@ -40,12 +40,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_P_AddMedicine1 = new MediTech.PharmacistUC.UC_P_AddMedicine();
-            this.uC_P_Dashboard1 = new MediTech.PharmacistUC.UC_P_Dashboard();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_P_ViewMedicine1 = new MediTech.PharmacistUC.UC_P_ViewMedicine();
+            this.uC_P_AddMedicine1 = new MediTech.PharmacistUC.UC_P_AddMedicine();
+            this.uC_P_Dashboard1 = new MediTech.PharmacistUC.UC_P_Dashboard();
+            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_P_SellMedicine1 = new MediTech.PharmacistUC.UC_P_SellMedicine();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -240,6 +242,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.uC_P_SellMedicine1);
             this.panel2.Controls.Add(this.uC_P_ViewMedicine1);
             this.panel2.Controls.Add(this.uC_P_AddMedicine1);
             this.panel2.Controls.Add(this.uC_P_Dashboard1);
@@ -247,22 +250,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(767, 627);
             this.panel2.TabIndex = 1;
-            // 
-            // uC_P_AddMedicine1
-            // 
-            this.uC_P_AddMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.uC_P_AddMedicine1.Location = new System.Drawing.Point(0, 3);
-            this.uC_P_AddMedicine1.Name = "uC_P_AddMedicine1";
-            this.uC_P_AddMedicine1.Size = new System.Drawing.Size(767, 627);
-            this.uC_P_AddMedicine1.TabIndex = 1;
-            // 
-            // uC_P_Dashboard1
-            // 
-            this.uC_P_Dashboard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.uC_P_Dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.uC_P_Dashboard1.Name = "uC_P_Dashboard1";
-            this.uC_P_Dashboard1.Size = new System.Drawing.Size(767, 627);
-            this.uC_P_Dashboard1.TabIndex = 0;
             // 
             // guna2Elipse1
             // 
@@ -283,6 +270,34 @@
             this.uC_P_ViewMedicine1.Name = "uC_P_ViewMedicine1";
             this.uC_P_ViewMedicine1.Size = new System.Drawing.Size(767, 627);
             this.uC_P_ViewMedicine1.TabIndex = 2;
+            // 
+            // uC_P_AddMedicine1
+            // 
+            this.uC_P_AddMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_AddMedicine1.Location = new System.Drawing.Point(0, 3);
+            this.uC_P_AddMedicine1.Name = "uC_P_AddMedicine1";
+            this.uC_P_AddMedicine1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_AddMedicine1.TabIndex = 1;
+            // 
+            // uC_P_Dashboard1
+            // 
+            this.uC_P_Dashboard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_Dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.uC_P_Dashboard1.Name = "uC_P_Dashboard1";
+            this.uC_P_Dashboard1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_Dashboard1.TabIndex = 0;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.TargetControl = this.panel2;
+            // 
+            // uC_P_SellMedicine1
+            // 
+            this.uC_P_SellMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_SellMedicine1.Location = new System.Drawing.Point(0, 0);
+            this.uC_P_SellMedicine1.Name = "uC_P_SellMedicine1";
+            this.uC_P_SellMedicine1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_SellMedicine1.TabIndex = 3;
             // 
             // Pharmacist
             // 
@@ -323,5 +338,7 @@
         private PharmacistUC.UC_P_AddMedicine uC_P_AddMedicine1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private PharmacistUC.UC_P_ViewMedicine uC_P_ViewMedicine1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
+        private PharmacistUC.UC_P_SellMedicine uC_P_SellMedicine1;
     }
 }
