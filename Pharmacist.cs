@@ -13,6 +13,7 @@ namespace MediTech
         {
             uC_P_Dashboard1.Visible = false;
             uC_P_AddMedicine1.Visible = false;
+            uC_P_ViewMedicine1.Visible = false;
             btnDashboard.PerformClick();
         }
 
@@ -48,6 +49,12 @@ namespace MediTech
         {
             uC_P_Dashboard1.Visible = true;
             uC_P_Dashboard1.BringToFront();
+        }
+
+        private void btnViewMedicine_Click(object sender, System.EventArgs e)
+        {
+            uC_P_ViewMedicine1.Visible = true;
+            uC_P_ViewMedicine1.BringToFront();
         }
     }
 }

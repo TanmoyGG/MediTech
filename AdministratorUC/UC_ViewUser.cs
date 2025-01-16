@@ -18,5 +18,10 @@ namespace MediTech.AdministratorUC
         {
             Application.Exit();
         }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
