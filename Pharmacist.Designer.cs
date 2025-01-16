@@ -40,16 +40,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ucProfile1 = new MediTech.AdministratorUC.UcProfile();
+            this.uC_P_SellMedicine1 = new MediTech.PharmacistUC.UC_P_SellMedicine();
             this.uC_P_ViewMedicine1 = new MediTech.PharmacistUC.UC_P_ViewMedicine();
             this.uC_P_AddMedicine1 = new MediTech.PharmacistUC.UC_P_AddMedicine();
             this.uC_P_Dashboard1 = new MediTech.PharmacistUC.UC_P_Dashboard();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.uC_P_SellMedicine1 = new MediTech.PharmacistUC.UC_P_SellMedicine();
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ucProfile1 = new MediTech.AdministratorUC.UcProfile();
+            this.btnModifyMedicine = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_P_ModifyMedicine1 = new MediTech.PharmacistUC.UC_P_ModifyMedicine();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,6 +61,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.panel1.Controls.Add(this.btnModifyMedicine);
             this.panel1.Controls.Add(this.btnProfile);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnSellMedicine);
@@ -132,7 +136,7 @@
             this.btnSellMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnSellMedicine.Image")));
             this.btnSellMedicine.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSellMedicine.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSellMedicine.Location = new System.Drawing.Point(161, 475);
+            this.btnSellMedicine.Location = new System.Drawing.Point(161, 513);
             this.btnSellMedicine.Name = "btnSellMedicine";
             this.btnSellMedicine.Size = new System.Drawing.Size(212, 45);
             this.btnSellMedicine.TabIndex = 5;
@@ -159,7 +163,7 @@
             this.btnViewMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnViewMedicine.Image")));
             this.btnViewMedicine.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnViewMedicine.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnViewMedicine.Location = new System.Drawing.Point(161, 399);
+            this.btnViewMedicine.Location = new System.Drawing.Point(161, 381);
             this.btnViewMedicine.Name = "btnViewMedicine";
             this.btnViewMedicine.Size = new System.Drawing.Size(212, 45);
             this.btnViewMedicine.TabIndex = 4;
@@ -186,7 +190,7 @@
             this.btnAddMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMedicine.Image")));
             this.btnAddMedicine.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAddMedicine.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnAddMedicine.Location = new System.Drawing.Point(161, 312);
+            this.btnAddMedicine.Location = new System.Drawing.Point(161, 307);
             this.btnAddMedicine.Name = "btnAddMedicine";
             this.btnAddMedicine.Size = new System.Drawing.Size(212, 45);
             this.btnAddMedicine.TabIndex = 3;
@@ -213,7 +217,7 @@
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnDashboard.Location = new System.Drawing.Point(161, 234);
+            this.btnDashboard.Location = new System.Drawing.Point(161, 238);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(212, 45);
             this.btnDashboard.TabIndex = 2;
@@ -245,6 +249,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.uC_P_ModifyMedicine1);
             this.panel2.Controls.Add(this.ucProfile1);
             this.panel2.Controls.Add(this.uC_P_SellMedicine1);
             this.panel2.Controls.Add(this.uC_P_ViewMedicine1);
@@ -255,17 +260,21 @@
             this.panel2.Size = new System.Drawing.Size(767, 627);
             this.panel2.TabIndex = 1;
             // 
-            // guna2Elipse1
+            // ucProfile1
             // 
-            this.guna2Elipse1.TargetControl = this.panel2;
+            this.ucProfile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.ucProfile1.Location = new System.Drawing.Point(0, 0);
+            this.ucProfile1.Name = "ucProfile1";
+            this.ucProfile1.Size = new System.Drawing.Size(767, 627);
+            this.ucProfile1.TabIndex = 4;
             // 
-            // guna2Elipse2
+            // uC_P_SellMedicine1
             // 
-            this.guna2Elipse2.TargetControl = this.panel2;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.TargetControl = this.panel2;
+            this.uC_P_SellMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_SellMedicine1.Location = new System.Drawing.Point(0, 0);
+            this.uC_P_SellMedicine1.Name = "uC_P_SellMedicine1";
+            this.uC_P_SellMedicine1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_SellMedicine1.TabIndex = 3;
             // 
             // uC_P_ViewMedicine1
             // 
@@ -291,29 +300,60 @@
             this.uC_P_Dashboard1.Size = new System.Drawing.Size(767, 627);
             this.uC_P_Dashboard1.TabIndex = 0;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this.panel2;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.panel2;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.TargetControl = this.panel2;
+            // 
             // guna2Elipse4
             // 
             this.guna2Elipse4.TargetControl = this.panel2;
-            // 
-            // uC_P_SellMedicine1
-            // 
-            this.uC_P_SellMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.uC_P_SellMedicine1.Location = new System.Drawing.Point(0, 0);
-            this.uC_P_SellMedicine1.Name = "uC_P_SellMedicine1";
-            this.uC_P_SellMedicine1.Size = new System.Drawing.Size(767, 627);
-            this.uC_P_SellMedicine1.TabIndex = 3;
             // 
             // guna2Elipse5
             // 
             this.guna2Elipse5.TargetControl = this.panel2;
             // 
-            // ucProfile1
+            // btnModifyMedicine
             // 
-            this.ucProfile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.ucProfile1.Location = new System.Drawing.Point(0, 0);
-            this.ucProfile1.Name = "ucProfile1";
-            this.ucProfile1.Size = new System.Drawing.Size(767, 627);
-            this.ucProfile1.TabIndex = 4;
+            this.btnModifyMedicine.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnModifyMedicine.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.btnModifyMedicine.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnModifyMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModifyMedicine.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnModifyMedicine.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnModifyMedicine.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnModifyMedicine.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnModifyMedicine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.btnModifyMedicine.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyMedicine.ForeColor = System.Drawing.Color.White;
+            this.btnModifyMedicine.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnModifyMedicine.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
+            this.btnModifyMedicine.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnModifyMedicine.Location = new System.Drawing.Point(161, 444);
+            this.btnModifyMedicine.Name = "btnModifyMedicine";
+            this.btnModifyMedicine.Size = new System.Drawing.Size(212, 45);
+            this.btnModifyMedicine.TabIndex = 8;
+            this.btnModifyMedicine.Text = "Modify Medicine";
+            this.btnModifyMedicine.Click += new System.EventHandler(this.btnModifyMedicine_Click);
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.TargetControl = this.panel2;
+            // 
+            // uC_P_ModifyMedicine1
+            // 
+            this.uC_P_ModifyMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_ModifyMedicine1.Location = new System.Drawing.Point(0, 0);
+            this.uC_P_ModifyMedicine1.Name = "uC_P_ModifyMedicine1";
+            this.uC_P_ModifyMedicine1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_ModifyMedicine1.TabIndex = 5;
             // 
             // Pharmacist
             // 
@@ -358,5 +398,8 @@
         private PharmacistUC.UC_P_SellMedicine uC_P_SellMedicine1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private AdministratorUC.UcProfile ucProfile1;
+        private Guna.UI2.WinForms.Guna2Button btnModifyMedicine;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+        private PharmacistUC.UC_P_ModifyMedicine uC_P_ModifyMedicine1;
     }
 }

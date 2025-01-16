@@ -56,5 +56,10 @@ namespace MediTech.AdministratorUC
             txtEmail.Clear();
             txtPassword.Clear();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

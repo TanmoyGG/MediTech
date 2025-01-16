@@ -120,6 +120,12 @@
     <Compile Include="PharmacistUC\UC_P_Dashboard.Designer.cs">
       <DependentUpon>UC_P_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="PharmacistUC\UC_P_ModifyMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PharmacistUC\UC_P_ModifyMedicine.Designer.cs">
+      <DependentUpon>UC_P_ModifyMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacistUC\UC_P_SellMedicine.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacistUC\UC_P_Dashboard.resx">
       <DependentUpon>UC_P_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacistUC\UC_P_ModifyMedicine.resx">
+      <DependentUpon>UC_P_ModifyMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacistUC\UC_P_SellMedicine.resx">
       <DependentUpon>UC_P_SellMedicine.cs</DependentUpon>

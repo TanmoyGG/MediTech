@@ -264,10 +264,10 @@
         CAQAAwQEADs=
 </value>
   </data>
-  <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAJolJREFUeF7tnX+QXXd5n0WYNJMmIZ0mGY9Buvfc1WJJ58g2lrCAQDW2bHAQwpIM
+        DQAACw0B7QfALAAAJolJREFUeF7tnX+QXXd5n0WYNJMmIZ0mGY9Buvfc1WJJ58g2lrCAQDW2bHAQwpIM
         Bv3ghz00YMcQW8Rl+BWS0GlsEmbSGoxtaNJpkoY2/8XGJCFtBxoILQXapplJoDQUEmOcBhLASdsAuZ2z
         xmb3OSvdfXXf8+Nqn2fmmfHA7vv5aOZ8vyvt3fvuli0iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi
         IiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi
@@ -440,7 +440,7 @@
   <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAFF9JREFUeF7t2U/LrWd5xmE/VYc12kk07chGESxYsFQs/Xpa9khIsyN21JEQ6aTQ
+        EAAACxABrSO9dQAAFF9JREFUeF7t2U/LrWd5xmE/VYc12kk07chGESxYsFQs/Xpa9khIsyN21JEQ6aTQ
         z/GWrSySnG929vtnrWvd930ePzgmOw5c1/P4nGzzve9JkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
         kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
         knRA//e///0AANNyj+rKgwDAhNyjuvIgADAh96iuPAgATMg9qisPAgATco/qyoMAwITco7ryIAAwIfeo
