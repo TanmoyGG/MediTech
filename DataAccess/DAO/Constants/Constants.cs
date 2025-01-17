@@ -101,12 +101,5 @@ namespace MediTech.DataAccess.DAO.Constants {
         public const string COUNT_TOTAL_SALES_REPORTS = "SELECT COUNT(*) FROM SalesReport";
 
     }
-
-    public static class OTP
-    {
-        public const string GET_OTP_BY_EMAIL = "SELECT * FROM OTP WHERE Email = @Email";
-        public const string INSERT_OTP = "INSERT INTO OTP (Email, OTP, OTP_Gen_Time, OTP_Exp_Time) VALUES (@Email, @OTP, @OTP_Gen_Time, DATEADD(MINUTE, 5, @OTP_Gen_Time))";
-        public const string DELETE_OTP = "DELETE FROM OTP WHERE Email = @Email";
-        
-    }
+    
 }

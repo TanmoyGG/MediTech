@@ -4,6 +4,9 @@ namespace MediTech.Model
 {
     public class Chemist
     {
+        public Chemist()
+        {
+        }
         public Chemist(string pEmail, string pName, DateTime pDob, string pMobileNo, string pUserName, string pPassword)
         {
             P_Email = pEmail;

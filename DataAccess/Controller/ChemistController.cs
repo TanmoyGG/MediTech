@@ -1,5 +1,6 @@
 ﻿using MediTech.DataAccess.DAO;
 using MediTech.Model;
+using MediTech.OTP;
 
 namespace MediTech.DataAccess.Controller
 {
@@ -40,11 +41,13 @@ namespace MediTech.DataAccess.Controller
         public void InsertChemist(Chemist chemist)
         {
             _chemistDao.InsertChemist(chemist);
+            EmailService.Instance.SendLoginDetailsToEmail(chemist.P_Email,chemist.P_UserName,chemist.P_Password);
         }
 
         public void UpdateChemist(Chemist chemist)
         {
             _chemistDao.UpdateChemist(chemist);
+            EmailService.Instance.SendLoginDetailsToEmail(chemist.P_Email,chemist.P_UserName,chemist.P_Password);
         }
 
         public void DeleteChemist(int id)

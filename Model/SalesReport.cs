@@ -4,6 +4,9 @@ namespace MediTech.Model
 {
     public class SalesReport
     {
+        public SalesReport()
+        {
+        }
         public SalesReport(DateTime reportDateTime, int mId, string mName, decimal price, string pName)
         {
             ReportDateTime = reportDateTime;

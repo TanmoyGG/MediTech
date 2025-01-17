@@ -4,6 +4,9 @@ namespace MediTech.Model
 {
     public class Medicine
     {
+        public Medicine()
+        {
+        }
         public Medicine(string mName, string mGroupName, string mType, decimal price, DateTime manuDate, DateTime expDate, int quantity)
         {
             M_Name = mName;

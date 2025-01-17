@@ -133,14 +133,12 @@
     <Compile Include="DataAccess\Controller\AdminController.cs" />
     <Compile Include="DataAccess\Controller\ChemistController.cs" />
     <Compile Include="DataAccess\Controller\MedicineController.cs" />
-    <Compile Include="DataAccess\Controller\OneTimePassController.cs" />
     <Compile Include="DataAccess\Controller\SalesReportController.cs" />
     <Compile Include="DataAccess\DAO\AdminDaoImpl.cs" />
     <Compile Include="DataAccess\DAO\ChemistDaoImpl.cs" />
     <Compile Include="DataAccess\DAO\Constants\Constants.cs" />
     <Compile Include="DataAccess\DAO\Dao.cs" />
     <Compile Include="DataAccess\DAO\MedicineDaoImpl.cs" />
-    <Compile Include="DataAccess\DAO\OneTimePassDaoImpl.cs" />
     <Compile Include="DataAccess\DAO\SalesReportDaoImpl.cs" />
     <Compile Include="DataAccess\DatabaseManager.cs" />
     <Compile Include="Form1.cs">
@@ -154,8 +152,8 @@
     <Compile Include="Model\OneTimePass.cs" />
     <Compile Include="Model\Chemist.cs" />
     <Compile Include="Model\SalesReport.cs" />
-    <Compile Include="OTP\Logger.cs" />
-    <Compile Include="OTP\OTPService.cs" />
+    <Compile Include="EmailService\Logger.cs" />
+    <Compile Include="EmailService\EmailService.cs" />
     <Compile Include="Pharmacist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,10 +259,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="config.xml" />
-    <Content Include="OTP\OtpImages\image-1.png" />
-    <Content Include="OTP\OtpImages\image-2.png" />
-    <Content Include="OTP\otp_template.html" />
+    <Content Include="config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EmailService\EmailImages\image-1.png" />
+    <Content Include="EmailService\EmailImages\image-2.png" />
+    <Content Include="EmailService\EmailTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

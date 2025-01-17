@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
+using MediTech.OTP;
 
 namespace MediTech.DataAccess.Controller {
     public class AdminController
@@ -20,11 +21,13 @@ namespace MediTech.DataAccess.Controller {
         public void AddAdmin(Admin admin)
         {
             _adminDAO.InsertAdmin(admin);
+            EmailService.Instance.SendLoginDetailsToEmail(admin.A_Email,admin.A_UserName,admin.A_Password);
         }
 
         public void UpdateAdmin(Admin admin)
         {
             _adminDAO.UpdateAdmin(admin);
+            EmailService.Instance.SendLoginDetailsToEmail(admin.A_Email,admin.A_UserName,admin.A_Password);
         }
 
         public void DeleteAdmin(int id)

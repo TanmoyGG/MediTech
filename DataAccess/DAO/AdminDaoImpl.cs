@@ -3,28 +3,16 @@ using System.Data;
 using System.Data.SqlClient;
 using MediTech.DataAccess.DAO.Constants;
 using MediTech.Model;
+using MediTech.DataAccess;
 
 namespace MediTech.DataAccess.DAO
 {
     public class AdminDAOImpl : IAdminDAO
     {
-        private readonly string _connectionString;
-
-        public AdminDAOImpl(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
-
-        private SqlConnection GetConnection()
-        {
-            return new SqlConnection(_connectionString);
-        }
-
         public Admin GetAdminById(int id)
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.GET_ADMIN_BY_ID, connection))
                 {
                     command.Parameters.AddWithValue("@A_Id", id);
@@ -33,14 +21,13 @@ namespace MediTech.DataAccess.DAO
                         return reader.Read() ? MapAdmin(reader) : null;
                     }
                 }
-            }
+            });
         }
 
         public Admin GetAdminByName(string name)
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.GET_ADMIN_BY_NAME, connection))
                 {
                     command.Parameters.AddWithValue("@A_Name", name);
@@ -49,14 +36,13 @@ namespace MediTech.DataAccess.DAO
                         return reader.Read() ? MapAdmin(reader) : null;
                     }
                 }
-            }
+            });
         }
 
         public Admin GetAdminByUsername(string username)
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.GET_ADMIN_BY_USERNAME, connection))
                 {
                     command.Parameters.AddWithValue("@A_UserName", username);
@@ -65,14 +51,13 @@ namespace MediTech.DataAccess.DAO
                         return reader.Read() ? MapAdmin(reader) : null;
                     }
                 }
-            }
+            });
         }
 
         public Admin GetAdminByEmail(string email)
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.GET_ADMIN_BY_EMAIL, connection))
                 {
                     command.Parameters.AddWithValue("@A_Email", email);
@@ -81,14 +66,13 @@ namespace MediTech.DataAccess.DAO
                         return reader.Read() ? MapAdmin(reader) : null;
                     }
                 }
-            }
+            });
         }
 
         public Admin GetAdminByMobileNo(string mobileNo)
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.GET_ADMINS_BY_MOBILE_NO, connection))
                 {
                     command.Parameters.AddWithValue("@A_MobileNo", mobileNo);
@@ -97,66 +81,61 @@ namespace MediTech.DataAccess.DAO
                         return reader.Read() ? MapAdmin(reader) : null;
                     }
                 }
-            }
+            });
         }
 
         public void InsertAdmin(Admin admin)
         {
-            using (var connection = GetConnection())
+            SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.INSERT_ADMIN, connection))
                 {
                     SetAdminParameters(command, admin);
                     command.ExecuteNonQuery();
                 }
-            }
+            });
         }
 
         public void UpdateAdmin(Admin admin)
         {
-            using (var connection = GetConnection())
+            SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.UPDATE_ADMIN, connection))
                 {
                     SetAdminParameters(command, admin);
                     command.Parameters.AddWithValue("@A_Id", admin.A_Id);
                     command.ExecuteNonQuery();
                 }
-            }
+            });
         }
 
         public void DeleteAdmin(int id)
         {
-            using (var connection = GetConnection())
+            SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.DELETE_ADMIN, connection))
                 {
                     command.Parameters.AddWithValue("@A_Id", id);
                     command.ExecuteNonQuery();
                 }
-            }
+            });
         }
 
         public int CountTotalAdmins()
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.COUNT_TOTAL_ADMINS, connection))
                 {
                     return (int)command.ExecuteScalar();
                 }
-            }
+            });
         }
 
         public Admin GetAdminByCriteria(string username, int? id, string name, string email, string mobileNo)
         {
-            using (var connection = GetConnection())
+            return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                connection.Open();
                 using (var command = new SqlCommand(AdminQueries.GET_ADMIN_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO, connection))
                 {
                     command.Parameters.AddWithValue("@A_UserName", username ?? (object)DBNull.Value);
@@ -170,7 +149,7 @@ namespace MediTech.DataAccess.DAO
                         return reader.Read() ? MapAdmin(reader) : null;
                     }
                 }
-            }
+            });
         }
 
         private static Admin MapAdmin(IDataRecord record)
@@ -197,6 +176,4 @@ namespace MediTech.DataAccess.DAO
             command.Parameters.AddWithValue("@A_UserName", admin.A_UserName);
         }
     }
-
-
 }

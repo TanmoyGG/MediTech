@@ -14,6 +14,11 @@ namespace MediTech.Model
             A_UserName = aUserName;
         }
 
+        public Admin()
+        {
+            
+        }
+
         public int A_Id { get; set; }
         public string A_Email { get; set; }
         public string A_Password { get; set; }

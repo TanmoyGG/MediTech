@@ -57,15 +57,5 @@ namespace MediTech.DataAccess.DAO {
         int CountTotalSalesReports();
     }
     
-    public interface IOTPDAO
-    {
-        OneTimePass GetOTPByEmail(string email);
-        void InsertOTP(OneTimePass otp);
-        void DeleteOTP(string email);
-    }
-
-
-
-
 
 }
