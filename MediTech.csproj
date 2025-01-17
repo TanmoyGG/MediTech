@@ -96,12 +96,23 @@
     <Compile Include="AdministratorUC\UC_ViewUser.Designer.cs">
       <DependentUpon>UC_ViewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\ConfigLoader.cs" />
+    <Compile Include="DataAccess\Controller\AdminController.cs" />
+    <Compile Include="DataAccess\DAO\AdminDaoImpl.cs" />
+    <Compile Include="DataAccess\DAO\Constants\Constants.cs" />
+    <Compile Include="DataAccess\DAO\Dao.cs" />
+    <Compile Include="DataAccess\DatabaseManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Admin.cs" />
+    <Compile Include="Model\Medicine.cs" />
+    <Compile Include="Model\OneTimePass.cs" />
+    <Compile Include="Model\Pharmacist.cs" />
+    <Compile Include="Model\SalesReport.cs" />
     <Compile Include="Pharmacist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +216,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="config.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
