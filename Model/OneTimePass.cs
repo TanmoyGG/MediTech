@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediTech.Model
 {
@@ -19,7 +15,6 @@ namespace MediTech.Model
         public int OTP { get; set; }
         public string Email { get; set; }
         public DateTime OTP_Gen_Time { get; set; }
-        public DateTime OTP_Exp_Time { get; set ; }
-        
+        public DateTime OTP_Exp_Time { get; set; }
     }
 }

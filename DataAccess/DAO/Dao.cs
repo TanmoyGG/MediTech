@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using MediTech.Model;
 
-namespace MediTech.DataAccess.DAO {
+namespace MediTech.DataAccess.DAO
+{
     public interface IAdminDAO
     {
         Admin GetAdminById(int id);
@@ -16,6 +17,7 @@ namespace MediTech.DataAccess.DAO {
         int CountTotalAdmins();
         Admin GetAdminByCriteria(string username, int? id, string name, string email, string mobileNo);
     }
+
     public interface IChemistDAO
     {
         Chemist GetChemistById(int id);
@@ -29,6 +31,7 @@ namespace MediTech.DataAccess.DAO {
         int CountTotalChemists();
         Chemist GetChemistByCriteria(string username, int? id, string name, string email, string mobileNo);
     }
+
     public interface IMedicineDAO
     {
         Medicine GetMedicineById(int id);
@@ -47,7 +50,7 @@ namespace MediTech.DataAccess.DAO {
         int CountTotalMedicines();
         List<Medicine> GetMedicineByPartialCriteria(string name, string id, string groupName);
     }
-    
+
     public interface ISalesReportDAO
     {
         SalesReport GetSalesReportById(int id);
@@ -56,6 +59,4 @@ namespace MediTech.DataAccess.DAO {
         void InsertSalesReport(SalesReport salesReport);
         int CountTotalSalesReports();
     }
-    
-
 }

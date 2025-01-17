@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
-using MediTech.OTP;
 
-namespace MediTech.DataAccess.Controller {
+namespace MediTech.Controller
+{
     public class AdminController
     {
         private readonly IAdminDAO _adminDAO;
@@ -13,36 +13,43 @@ namespace MediTech.DataAccess.Controller {
             _adminDAO = adminDAO;
         }
 
-        public Admin GetAdminById(int id)
-        {
-            return _adminDAO.GetAdminById(id);
-        }
-
         public void AddAdmin(Admin admin)
         {
             _adminDAO.InsertAdmin(admin);
-            EmailService.Instance.SendLoginDetailsToEmail(admin.A_Email,admin.A_UserName,admin.A_Password);
+            Console.WriteLine("Admin added successfully.");
         }
 
         public void UpdateAdmin(Admin admin)
         {
             _adminDAO.UpdateAdmin(admin);
-            EmailService.Instance.SendLoginDetailsToEmail(admin.A_Email,admin.A_UserName,admin.A_Password);
+            Console.WriteLine("Admin updated successfully.");
         }
 
-        public void DeleteAdmin(int id)
+        public void RemoveAdmin(int id)
         {
             _adminDAO.DeleteAdmin(id);
+            Console.WriteLine("Admin removed successfully.");
         }
 
-        public int GetTotalAdminCount()
+        public void DisplayAdminById(int id)
         {
-            return _adminDAO.CountTotalAdmins();
+            var admin = _adminDAO.GetAdminById(id);
+            if (admin != null)
+                Console.WriteLine($"Admin: {admin.A_Name}, Email: {admin.A_Email}");
+            else
+                Console.WriteLine("Admin not found.");
         }
 
-        public Admin SearchAdminByCriteria(string username, int? id, string name, string email, string mobileNo)
+        public void DisplayTotalAdmins()
         {
-            return _adminDAO.GetAdminByCriteria(username, id, name, email, mobileNo);
+            var count = _adminDAO.CountTotalAdmins();
+            Console.WriteLine($"Total Admins: {count}");
+        }
+
+        public Admin GetAdminByUserName(string name)
+        {
+            Console.WriteLine("Admin found successfully.");
+            return _adminDAO.GetAdminByUsername(name);
         }
     }
 }

@@ -7,7 +7,9 @@ namespace MediTech.Model
         public Medicine()
         {
         }
-        public Medicine(string mName, string mGroupName, string mType, decimal price, DateTime manuDate, DateTime expDate, int quantity)
+
+        public Medicine(string mName, string mGroupName, string mType, decimal price, DateTime manuDate,
+            DateTime expDate, int quantity)
         {
             M_Name = mName;
             M_GroupName = mGroupName;
@@ -26,7 +28,5 @@ namespace MediTech.Model
         public DateTime ManuDate { get; set; }
         public DateTime ExpDate { get; set; }
         public int Quantity { get; set; }
-        
-        
     }
 }

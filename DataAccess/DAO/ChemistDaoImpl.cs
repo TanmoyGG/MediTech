@@ -152,7 +152,9 @@ namespace MediTech.DataAccess.DAO
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.GET_Chemist_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO, connection))
+                using (var command =
+                       new SqlCommand(ChemistQueries.GET_Chemist_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO,
+                           connection))
                 {
                     command.Parameters.AddWithValue("@P_UserName", username ?? (object)DBNull.Value);
                     command.Parameters.AddWithValue("@P_Id", id ?? (object)DBNull.Value);

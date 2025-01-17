@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MediTech.AdministratorUC
 {
@@ -9,7 +10,7 @@ namespace MediTech.AdministratorUC
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, System.EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

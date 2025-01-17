@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using MediTech.DataAccess.DAO.Constants;
 using MediTech.Model;
-using MediTech.DataAccess;
 
 namespace MediTech.DataAccess.DAO
 {
@@ -35,12 +34,10 @@ namespace MediTech.DataAccess.DAO
                     command.Parameters.AddWithValue("@EndDate", endDate);
                     using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            reports.Add(MapToSalesReport(reader));
-                        }
+                        while (reader.Read()) reports.Add(MapToSalesReport(reader));
                     }
                 }
+
                 return reports;
             });
         }
@@ -55,12 +52,10 @@ namespace MediTech.DataAccess.DAO
                     command.Parameters.AddWithValue("@M_Id", medicineId);
                     using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            reports.Add(MapToSalesReport(reader));
-                        }
+                        while (reader.Read()) reports.Add(MapToSalesReport(reader));
                     }
                 }
+
                 return reports;
             });
         }
@@ -94,11 +89,11 @@ namespace MediTech.DataAccess.DAO
         private SalesReport MapToSalesReport(SqlDataReader reader)
         {
             return new SalesReport(
-                reportDateTime: reader.GetDateTime(reader.GetOrdinal("ReportDateTime")),
-                mId: reader.GetInt32(reader.GetOrdinal("M_Id")),
-                mName: reader.GetString(reader.GetOrdinal("M_Name")),
-                price: reader.GetDecimal(reader.GetOrdinal("Price")),
-                pName: reader.GetString(reader.GetOrdinal("P_Name"))
+                reader.GetDateTime(reader.GetOrdinal("ReportDateTime")),
+                reader.GetInt32(reader.GetOrdinal("M_Id")),
+                reader.GetString(reader.GetOrdinal("M_Name")),
+                reader.GetDecimal(reader.GetOrdinal("Price")),
+                reader.GetString(reader.GetOrdinal("P_Name"))
             )
             {
                 Report_Id = reader.GetInt32(reader.GetOrdinal("Report_Id"))

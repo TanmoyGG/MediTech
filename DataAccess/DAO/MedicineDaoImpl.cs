@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using MediTech.DataAccess.DAO.Constants;
 using MediTech.Model;
-using MediTech.DataAccess;
 
 namespace MediTech.DataAccess.DAO
 {
@@ -64,12 +63,10 @@ namespace MediTech.DataAccess.DAO
                 {
                     using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            medicines.Add(MapToMedicine(reader));
-                        }
+                        while (reader.Read()) medicines.Add(MapToMedicine(reader));
                     }
                 }
+
                 return medicines;
             });
         }
@@ -198,7 +195,9 @@ namespace MediTech.DataAccess.DAO
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(MedicineQueries.GET_MEDICINE_BY_PARTIAL_NAME_OR_PARTIAL_ID_OR_PARTIAL_GROUP_NAME, connection))
+                using (var command =
+                       new SqlCommand(MedicineQueries.GET_MEDICINE_BY_PARTIAL_NAME_OR_PARTIAL_ID_OR_PARTIAL_GROUP_NAME,
+                           connection))
                 {
                     command.Parameters.AddWithValue("@M_Name", name ?? string.Empty);
                     command.Parameters.AddWithValue("@M_Id", id ?? string.Empty);
@@ -225,10 +224,7 @@ namespace MediTech.DataAccess.DAO
 
             using (var reader = command.ExecuteReader())
             {
-                while (reader.Read())
-                {
-                    medicines.Add(MapToMedicine(reader));
-                }
+                while (reader.Read()) medicines.Add(MapToMedicine(reader));
             }
 
             return medicines;

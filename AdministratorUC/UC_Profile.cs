@@ -46,7 +46,6 @@ namespace MediTech.AdministratorUC
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -56,7 +55,6 @@ namespace MediTech.AdministratorUC
 
         private void txtUserRole_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

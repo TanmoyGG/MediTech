@@ -4,8 +4,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
 
-namespace MediTech.DataAccess {
-    public sealed class SqlDatabaseManager {
+namespace MediTech.DataAccess
+{
+    public sealed class SqlDatabaseManager
+    {
         private static readonly Lazy<SqlDatabaseManager> instance =
             new Lazy<SqlDatabaseManager>(() => new SqlDatabaseManager());
 
@@ -13,25 +15,25 @@ namespace MediTech.DataAccess {
         private readonly int _poolSize;
         private readonly SemaphoreSlim _semaphore;
 
-        private SqlDatabaseManager() {
+        private SqlDatabaseManager()
+        {
             // Initialize connection pool
             _poolSize = 10; // Set pool size
             _connectionPool = new ConcurrentQueue<SqlConnection>();
             _semaphore = new SemaphoreSlim(_poolSize, _poolSize);
 
             // Pre-populate the connection pool
-            for (int i = 0; i < _poolSize; i++) {
-                _connectionPool.Enqueue(CreateConnection());
-            }
+            for (var i = 0; i < _poolSize; i++) _connectionPool.Enqueue(CreateConnection());
         }
 
         public static SqlDatabaseManager Instance => instance.Value;
 
         /// <summary>
-        /// Creates a new SQL connection using the connection string from ConfigLoader.
+        ///     Creates a new SQL connection using the connection string from ConfigLoader.
         /// </summary>
         /// <returns>A new SqlConnection object.</returns>
-        private SqlConnection CreateConnection() {
+        private SqlConnection CreateConnection()
+        {
             var connectionString = ConfigLoader.Instance.GetConnectionString();
             var connection = new SqlConnection(connectionString);
             connection.Open();
@@ -39,63 +41,73 @@ namespace MediTech.DataAccess {
         }
 
         /// <summary>
-        /// Retrieves an open connection from the connection pool.
+        ///     Retrieves an open connection from the connection pool.
         /// </summary>
         /// <returns>An open SqlConnection from the pool.</returns>
-        public SqlConnection GetConnection() {
+        public SqlConnection GetConnection()
+        {
             _semaphore.Wait();
-            if (_connectionPool.TryDequeue(out SqlConnection connection)) {
-                if (connection.State == ConnectionState.Closed) {
-                    connection.Open();
-                }
+            if (_connectionPool.TryDequeue(out var connection))
+            {
+                if (connection.State == ConnectionState.Closed) connection.Open();
                 return connection;
-            } else {
-                throw new InvalidOperationException("Failed to get a connection from the pool.");
             }
+
+            throw new InvalidOperationException("Failed to get a connection from the pool.");
         }
 
         /// <summary>
-        /// Releases the given SQL connection back to the pool.
+        ///     Releases the given SQL connection back to the pool.
         /// </summary>
         /// <param name="connection">The connection to release.</param>
-        public void ReleaseConnection(SqlConnection connection) {
-            if (connection == null) {
-                throw new ArgumentNullException(nameof(connection));
-            }
+        public void ReleaseConnection(SqlConnection connection)
+        {
+            if (connection == null) throw new ArgumentNullException(nameof(connection));
 
-            if (connection.State == ConnectionState.Open) {
+            if (connection.State == ConnectionState.Open)
+            {
                 _connectionPool.Enqueue(connection);
                 _semaphore.Release();
-            } else {
+            }
+            else
+            {
                 connection.Dispose();
                 _connectionPool.Enqueue(CreateConnection());
             }
         }
 
         /// <summary>
-        /// Executes a given action using a connection from the pool.
+        ///     Executes a given action using a connection from the pool.
         /// </summary>
         /// <param name="action">The action to execute with the connection.</param>
-        public void Execute(Action<SqlConnection> action) {
+        public void Execute(Action<SqlConnection> action)
+        {
             var connection = GetConnection();
-            try {
+            try
+            {
                 action(connection);
-            } finally {
+            }
+            finally
+            {
                 ReleaseConnection(connection);
             }
         }
 
         /// <summary>
-        /// Executes a given function that returns a value using a connection from the pool.
+        ///     Executes a given function that returns a value using a connection from the pool.
         /// </summary>
         /// <typeparam name="T">The return type of the function.</typeparam>
         /// <param name="func">The function to execute with the connection.</param>
         /// <returns>The result of the function execution.</returns>
-        public T Execute<T>(Func<SqlConnection, T> func) {
+        public T Execute<T>(Func<SqlConnection, T> func)
+        {
             var connection = GetConnection();
-            try {
+            try
+            {
                 return func(connection);
-            } finally {
+            }
+            finally
+            {
                 ReleaseConnection(connection);
             }
         }

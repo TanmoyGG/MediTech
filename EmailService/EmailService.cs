@@ -1,8 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 using MailKit.Net.Smtp;
+using MailKit.Security;
 using MediTech.DataAccess;
 using MimeKit;
 
@@ -17,7 +16,7 @@ namespace MediTech.OTP
         private static string smtpServer;
         private static int smtpPort;
 
-        private bool _disposed = false;
+        private bool _disposed;
 
         // Private constructor to prevent instantiation
         private EmailService()
@@ -26,12 +25,13 @@ namespace MediTech.OTP
         }
 
         // Public property to get the single instance
-        public static EmailService Instance
+        public static EmailService Instance => _instance.Value;
+
+
+        public void Dispose()
         {
-            get
-            {
-                return _instance.Value;
-            }
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         // Load configuration settings using ConfigLoader
@@ -57,16 +57,16 @@ namespace MediTech.OTP
         {
             try
             {
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
-                string filePath = Path.Combine(basePath, "EmailService", "EmailTemplate.html");
-                System.Console.WriteLine(filePath);
+                var basePath = AppDomain.CurrentDomain.BaseDirectory;
+                var filePath = Path.Combine(basePath, "EmailService", "EmailTemplate.html");
+                Console.WriteLine(filePath);
 
-                string htmlTemplate = File.ReadAllText(filePath);
+                var htmlTemplate = File.ReadAllText(filePath);
 
                 htmlTemplate = htmlTemplate.Replace("{{UserName}}", UserName);
                 htmlTemplate = htmlTemplate.Replace("{{Pass}}", pass);
 
-                string currentDateTime = DateTime.Now.ToString("MMMM dd, yyyy - hh:mm tt");
+                var currentDateTime = DateTime.Now.ToString("MMMM dd, yyyy - hh:mm tt");
                 htmlTemplate = htmlTemplate.Replace("{{DateTime}}", currentDateTime);
 
                 return htmlTemplate;
@@ -86,7 +86,7 @@ namespace MediTech.OTP
             emailMessage.To.Add(new MailboxAddress("", toEmail));
             emailMessage.Subject = "MediTech - Login Details";
 
-            string emailBody = LoadHtmlTemplate(UserName, pass);
+            var emailBody = LoadHtmlTemplate(UserName, pass);
             emailMessage.Body = new TextPart("html")
             {
                 Text = emailBody
@@ -96,7 +96,7 @@ namespace MediTech.OTP
             {
                 try
                 {
-                    client.Connect(smtpServer, smtpPort, MailKit.Security.SecureSocketOptions.StartTls);
+                    client.Connect(smtpServer, smtpPort, SecureSocketOptions.StartTls);
                     client.Authenticate(smtpEmail, smtpPassword);
                     client.Send(emailMessage);
                     Logger.Log($"Login Details sent to {toEmail}");
@@ -108,13 +108,6 @@ namespace MediTech.OTP
                     throw new ApplicationException("Error sending email.");
                 }
             }
-        }
-
-       
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
 
         // Protected dispose method
@@ -129,6 +122,7 @@ namespace MediTech.OTP
                     smtpPassword = null;
                     smtpServer = null;
                 }
+
                 _disposed = true;
             }
         }
