@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using MediTech.DataAccess.DAO;
 using MediTech.DataAccess.DAO.Constants;
 using MediTech.Model;
 
-namespace MediTech.DAO
+namespace MediTech.DataAccess.DAO
 {
     public class AdminDAOImpl : IAdminDAO
     {
