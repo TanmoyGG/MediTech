@@ -26,27 +26,27 @@ namespace MediTech.DataAccess.DAO.Constants {
 
     }
 
-    public static class PharmacistQueries {
+    public static class ChemistQueries {
 
-        public const string GET_PHARMACIST_BY_ID = "SELECT * FROM Pharmacist WHERE P_Id = @P_Id";
+        public const string GET_Chemist_BY_ID = "SELECT * FROM Chemist WHERE P_Id = @P_Id";
 
-        public const string GET_PHARMACIST_BY_NAME = "SELECT * FROM Pharmacist WHERE P_Name = @P_Name"; 
+        public const string GET_Chemist_BY_NAME = "SELECT * FROM Chemist WHERE P_Name = @P_Name"; 
 
-        public const string GET_PHARMACIST_BY_USERNAME = "SELECT * FROM Pharmacist WHERE P_UserName = @P_UserName"; 
+        public const string GET_Chemist_BY_USERNAME = "SELECT * FROM Chemist WHERE P_UserName = @P_UserName"; 
 
-        public const string GET_PHARMACIST_BY_EMAIL = "SELECT * FROM Pharmacist WHERE P_Email = @P_Email"; 
+        public const string GET_Chemist_BY_EMAIL = "SELECT * FROM Chemist WHERE P_Email = @P_Email"; 
 
-        public const string GET_PHARMACISTS_BY_MOBILE_NO = "SELECT * FROM Pharmacist WHERE P_MobileNo = @P_MobileNo"; 
+        public const string GET_ChemistS_BY_MOBILE_NO = "SELECT * FROM Chemist WHERE P_MobileNo = @P_MobileNo"; 
 
-        public const string INSERT_PHARMACIST = "INSERT INTO Pharmacist (P_Email, P_Name, P_Dob, P_MobileNo, P_UserName, P_Password) VALUES (@P_Email, @P_Name, @P_Dob, @P_MobileNo, @P_UserName, @P_Password)";
+        public const string INSERT_Chemist = "INSERT INTO Chemist (P_Email, P_Name, P_Dob, P_MobileNo, P_UserName, P_Password) VALUES (@P_Email, @P_Name, @P_Dob, @P_MobileNo, @P_UserName, @P_Password)";
 
-        public const string UPDATE_PHARMACIST = "UPDATE Pharmacist SET P_Email = @P_Email, P_Name = @P_Name, P_Dob = @P_Dob, P_MobileNo = @P_MobileNo, P_UserName = @P_UserName, P_Password = @P_Password WHERE P_Id = @P_Id";
+        public const string UPDATE_Chemist = "UPDATE Chemist SET P_Email = @P_Email, P_Name = @P_Name, P_Dob = @P_Dob, P_MobileNo = @P_MobileNo, P_UserName = @P_UserName, P_Password = @P_Password WHERE P_Id = @P_Id";
 
-        public const string DELETE_PHARMACIST = "DELETE FROM Pharmacist WHERE P_Id = @P_Id";
+        public const string DELETE_Chemist = "DELETE FROM Chemist WHERE P_Id = @P_Id";
 
-        public const string COUNT_TOTAL_PHARMACISTS = "SELECT COUNT(*) FROM Pharmacist";
+        public const string COUNT_TOTAL_ChemistS = "SELECT COUNT(*) FROM Chemist";
 
-        public const string GET_PHARMACIST_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO = "SELECT * FROM Pharmacist WHERE P_UserName = @P_UserName OR P_Id = @P_Id OR P_Name = @P_Name OR P_Email = @P_Email OR P_MobileNo = @P_MobileNo";
+        public const string GET_Chemist_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO = "SELECT * FROM Chemist WHERE P_UserName = @P_UserName OR P_Id = @P_Id OR P_Name = @P_Name OR P_Email = @P_Email OR P_MobileNo = @P_MobileNo";
 
     }
 

@@ -16,18 +16,18 @@ namespace MediTech.DataAccess.DAO {
         int CountTotalAdmins();
         Admin GetAdminByCriteria(string username, int? id, string name, string email, string mobileNo);
     }
-    public interface IPharmacistDAO
+    public interface IChemistDAO
     {
-        Pharmacist GetPharmacistById(int id);
-        Pharmacist GetPharmacistByName(string name);
-        Pharmacist GetPharmacistByUsername(string username);
-        Pharmacist GetPharmacistByEmail(string email);
-        Pharmacist GetPharmacistByMobileNo(string mobileNo);
-        void InsertPharmacist(Pharmacist pharmacist);
-        void UpdatePharmacist(Pharmacist pharmacist);
-        void DeletePharmacist(int id);
-        int CountTotalPharmacists();
-        Pharmacist GetPharmacistByCriteria(string username, int? id, string name, string email, string mobileNo);
+        Chemist GetChemistById(int id);
+        Chemist GetChemistByName(string name);
+        Chemist GetChemistByUsername(string username);
+        Chemist GetChemistByEmail(string email);
+        Chemist GetChemistByMobileNo(string mobileNo);
+        void InsertChemist(Chemist Chemist);
+        void UpdateChemist(Chemist Chemist);
+        void DeleteChemist(int id);
+        int CountTotalChemists();
+        Chemist GetChemistByCriteria(string username, int? id, string name, string email, string mobileNo);
     }
     public interface IMedicineDAO
     {

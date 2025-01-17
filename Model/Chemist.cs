@@ -2,9 +2,9 @@
 
 namespace MediTech.Model
 {
-    public class Pharmacist
+    public class Chemist
     {
-        public Pharmacist(string pEmail, string pName, DateTime pDob, string pMobileNo, string pUserName, string pPassword)
+        public Chemist(string pEmail, string pName, DateTime pDob, string pMobileNo, string pUserName, string pPassword)
         {
             P_Email = pEmail;
             P_Name = pName;

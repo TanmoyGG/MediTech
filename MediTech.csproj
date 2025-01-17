@@ -111,7 +111,7 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\OneTimePass.cs" />
-    <Compile Include="Model\Pharmacist.cs" />
+    <Compile Include="Model\Chemist.cs" />
     <Compile Include="Model\SalesReport.cs" />
     <Compile Include="Pharmacist.cs">
       <SubType>Form</SubType>
@@ -217,6 +217,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
