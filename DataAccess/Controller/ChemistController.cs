@@ -1,4 +1,5 @@
-﻿using MediTech.DataAccess.DAO;
+﻿using System;
+using MediTech.DataAccess.DAO;
 using MediTech.Model;
 using MediTech.OTP;
 
@@ -55,9 +56,11 @@ namespace MediTech.DataAccess.Controller
             _chemistDao.DeleteChemist(id);
         }
 
-        public int CountTotalChemists()
+        public int DisplayTotalPharmacists()
         {
-            return _chemistDao.CountTotalChemists();
+            var count = _chemistDao.CountTotalChemists();
+            Console.WriteLine($"Total Pharmacists: {count}");
+            return count;
         }
 
         public Chemist GetChemistByCriteria(string username, int? id, string name, string email, string mobileNo)

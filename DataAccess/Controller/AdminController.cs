@@ -40,10 +40,11 @@ namespace MediTech.Controller
                 Console.WriteLine("Admin not found.");
         }
 
-        public void DisplayTotalAdmins()
+        public int DisplayTotalAdmins()
         {
             var count = _adminDAO.CountTotalAdmins();
             Console.WriteLine($"Total Admins: {count}");
+            return count;
         }
 
         public Admin GetAdminByUserName(string name)
@@ -54,5 +55,7 @@ namespace MediTech.Controller
         public bool Login(string usernameOrEmail, string password) {
             return _adminDAO.ValidateAdminLogin(usernameOrEmail, password);
         }
+        
+        
     }
 }
