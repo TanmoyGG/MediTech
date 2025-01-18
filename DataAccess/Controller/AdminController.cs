@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
 
@@ -45,6 +46,10 @@ namespace MediTech.Controller
             var count = _adminDAO.CountTotalAdmins();
             Console.WriteLine($"Total Admins: {count}");
             return count;
+        }
+        
+        public IEnumerable<Admin> GetAllAdmins() {
+            return _adminDAO.GetAllAdmins();
         }
 
         public Admin GetAdminByUserName(string name)

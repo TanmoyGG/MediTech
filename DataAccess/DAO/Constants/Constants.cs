@@ -28,37 +28,38 @@
         public const string VALIDATE_ADMIN_LOGIN = "SELECT A_ID FROM Admin " +
                                                    "WHERE (A_UserName COLLATE Latin1_General_BIN = @A_UserName OR A_Email = @A_Email) " +
                                                    "AND A_Password = @A_Password ";
-        
+        public const string GET_ALL_ADMINS = "SELECT * FROM Admin";
     }
     
     public static class ChemistQueries
     {
-        public const string GET_Chemist_BY_ID = "SELECT * FROM Chemist WHERE P_Id = @P_Id";
+        public const string GET_CHEMIST_BY_ID = "SELECT * FROM Chemist WHERE P_Id = @P_Id";
 
-        public const string GET_Chemist_BY_NAME = "SELECT * FROM Chemist WHERE P_Name = @P_Name";
+        public const string GET_CHEMIST_BY_NAME = "SELECT * FROM Chemist WHERE P_Name = @P_Name";
 
-        public const string GET_Chemist_BY_USERNAME = "SELECT * FROM Chemist WHERE P_UserName = @P_UserName";
+        public const string GET_CHEMIST_BY_USERNAME = "SELECT * FROM Chemist WHERE P_UserName = @P_UserName";
 
-        public const string GET_Chemist_BY_EMAIL = "SELECT * FROM Chemist WHERE P_Email = @P_Email";
+        public const string GET_CHEMIST_BY_EMAIL = "SELECT * FROM Chemist WHERE P_Email = @P_Email";
 
-        public const string GET_ChemistS_BY_MOBILE_NO = "SELECT * FROM Chemist WHERE P_MobileNo = @P_MobileNo";
+        public const string GET_CHEMIST_BY_MOBILE_NO = "SELECT * FROM Chemist WHERE P_MobileNo = @P_MobileNo";
 
-        public const string INSERT_Chemist =
+        public const string INSERT_CHEMIST =
             "INSERT INTO Chemist (P_Email, P_Name, P_Dob, P_MobileNo, P_UserName, P_Password) VALUES (@P_Email, @P_Name, @P_Dob, @P_MobileNo, @P_UserName, @P_Password)";
 
-        public const string UPDATE_Chemist =
+        public const string UPDATE_CHEMIST =
             "UPDATE Chemist SET P_Email = @P_Email, P_Name = @P_Name, P_Dob = @P_Dob, P_MobileNo = @P_MobileNo, P_UserName = @P_UserName, P_Password = @P_Password WHERE P_Id = @P_Id";
 
-        public const string DELETE_Chemist = "DELETE FROM Chemist WHERE P_Id = @P_Id";
+        public const string DELETE_CHEMIST = "DELETE FROM Chemist WHERE P_Id = @P_Id";
 
         public const string COUNT_TOTAL_ChemistS = "SELECT COUNT(*) FROM Chemist";
 
-        public const string GET_Chemist_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO =
+        public const string GET_CHEMIST_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO =
             "SELECT * FROM Chemist WHERE P_UserName = @P_UserName OR P_Id = @P_Id OR P_Name = @P_Name OR P_Email = @P_Email OR P_MobileNo = @P_MobileNo";
         
-        public const string VALIDATE_Chemist_LOGIN = "SELECT P_ID FROM Chemist " +
+        public const string VALIDATE_CHEMIST_LOGIN = "SELECT P_ID FROM Chemist " +
                                                    "WHERE (P_UserName COLLATE Latin1_General_BIN = @P_UserName OR P_Email = @P_Email) " +
                                                    "AND P_Password = @P_Password ";
+        public const string GET_ALL_CHEMISTS = "SELECT * FROM Chemist";
     }
 
     public static class MedicineQueries

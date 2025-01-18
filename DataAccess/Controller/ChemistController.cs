@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
 using MediTech.OTP;
@@ -54,6 +55,7 @@ namespace MediTech.DataAccess.Controller
         public void DeleteChemist(int id)
         {
             _chemistDao.DeleteChemist(id);
+            Console.WriteLine("Pharmacist removed successfully.");
         }
 
         public int DisplayTotalPharmacists()
@@ -70,6 +72,10 @@ namespace MediTech.DataAccess.Controller
         
         public bool Login(string usernameOrEmail, string password) {
             return _chemistDao.ValidateChemistLogin(usernameOrEmail, password);
+        }
+        
+        public IEnumerable<Chemist> GetAllChemists() {
+            return _chemistDao.GetAllChemists();
         }
     }
 }

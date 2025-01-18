@@ -19,6 +19,8 @@ namespace MediTech.DataAccess.DAO
         
         bool ValidateAdminLogin(string usernameOrEmail, string password);
         
+        IEnumerable<Admin> GetAllAdmins();
+        
     }
 
     public interface IChemistDAO
@@ -35,6 +37,8 @@ namespace MediTech.DataAccess.DAO
         Chemist GetChemistByCriteria(string username, int? id, string name, string email, string mobileNo);
         
         bool ValidateChemistLogin(string usernameOrEmail, string password);
+        
+        IEnumerable<Chemist> GetAllChemists();
     }
 
     public interface IMedicineDAO

@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using MediTech.DataAccess;
-using MediTech.DataAccess.DAO;
 using MediTech.DataAccess.DAO.Constants;
 using MediTech.Model;
 
-namespace MediTech.DAO
+namespace MediTech.DataAccess.DAO
 {
-    public class AdminDAOImpl : IAdminDAO
+    public class AdminDaoImpl : IAdminDAO
     {
         public Admin GetAdminById(int id)
         {
@@ -190,6 +189,20 @@ namespace MediTech.DAO
                         return reader.HasRows;
                     }
                 }
+            });
+        }
+        
+        public IEnumerable<Admin> GetAllAdmins() {
+            return SqlDatabaseManager.Instance.Execute(connection => {
+                var admins = new List<Admin>();
+                using (var cmd = new SqlCommand(AdminQueries.GET_ALL_ADMINS, connection)) {
+                    using (var reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            admins.Add(MapToAdmin(reader));
+                        }
+                    }
+                }
+                return admins;
             });
         }
         

@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MediTech.Controller;
-using MediTech.DAO;
 using MediTech.DataAccess.Controller;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
@@ -100,7 +99,7 @@ namespace MediTech.AdministratorUC
                 // Proceed with adding the user
                 if (txtUserRole.Text == "Administrator")
                 {
-                    IAdminDAO adminDao = new AdminDAOImpl();
+                    IAdminDAO adminDao = new AdminDaoImpl();
                     var adminController = new AdminController(adminDao);
 
                     var admin = new Admin
@@ -119,7 +118,7 @@ namespace MediTech.AdministratorUC
                 }
                 else if (txtUserRole.Text == "Pharmacist")
                 {
-                    IChemistDAO chemistDao = new ChemistDAOImpl();
+                    IChemistDAO chemistDao = new ChemistDaoImpl();
                     var chemistController = new ChemistController(chemistDao);
 
                     var chemist = new Chemist
@@ -149,10 +148,10 @@ namespace MediTech.AdministratorUC
 
         private bool IsUsernameUnique(string text)
         {
-            IAdminDAO adminDao = new AdminDAOImpl();
+            IAdminDAO adminDao = new AdminDaoImpl();
             var adminController = new AdminController(adminDao);
 
-            var chemistController = new ChemistController(new ChemistDAOImpl());
+            var chemistController = new ChemistController(new ChemistDaoImpl());
 
             return adminController.GetAdminByUserName(text) == null &&
                    chemistController.GetChemistByUsername(text) == null;

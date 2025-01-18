@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using MediTech.DataAccess.DAO.Constants;
@@ -6,13 +7,13 @@ using MediTech.Model;
 
 namespace MediTech.DataAccess.DAO
 {
-    public class ChemistDAOImpl : IChemistDAO
+    public class ChemistDaoImpl : IChemistDAO
     {
         public Chemist GetChemistById(int id)
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.GET_Chemist_BY_ID, connection))
+                using (var command = new SqlCommand(ChemistQueries.GET_CHEMIST_BY_ID, connection))
                 {
                     command.Parameters.AddWithValue("@P_Id", id);
 
@@ -28,7 +29,7 @@ namespace MediTech.DataAccess.DAO
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.GET_Chemist_BY_NAME, connection))
+                using (var command = new SqlCommand(ChemistQueries.GET_CHEMIST_BY_NAME, connection))
                 {
                     command.Parameters.AddWithValue("@P_Name", name);
 
@@ -44,7 +45,7 @@ namespace MediTech.DataAccess.DAO
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.GET_Chemist_BY_USERNAME, connection))
+                using (var command = new SqlCommand(ChemistQueries.GET_CHEMIST_BY_USERNAME, connection))
                 {
                     command.Parameters.AddWithValue("@P_UserName", username);
 
@@ -60,7 +61,7 @@ namespace MediTech.DataAccess.DAO
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.GET_Chemist_BY_EMAIL, connection))
+                using (var command = new SqlCommand(ChemistQueries.GET_CHEMIST_BY_EMAIL, connection))
                 {
                     command.Parameters.AddWithValue("@P_Email", email);
 
@@ -76,7 +77,7 @@ namespace MediTech.DataAccess.DAO
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.GET_ChemistS_BY_MOBILE_NO, connection))
+                using (var command = new SqlCommand(ChemistQueries.GET_CHEMIST_BY_MOBILE_NO, connection))
                 {
                     command.Parameters.AddWithValue("@P_MobileNo", mobileNo);
 
@@ -92,7 +93,7 @@ namespace MediTech.DataAccess.DAO
         {
             SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.INSERT_Chemist, connection))
+                using (var command = new SqlCommand(ChemistQueries.INSERT_CHEMIST, connection))
                 {
                     command.Parameters.AddWithValue("@P_Email", chemist.P_Email);
                     command.Parameters.AddWithValue("@P_Name", chemist.P_Name);
@@ -110,7 +111,7 @@ namespace MediTech.DataAccess.DAO
         {
             SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.UPDATE_Chemist, connection))
+                using (var command = new SqlCommand(ChemistQueries.UPDATE_CHEMIST, connection))
                 {
                     command.Parameters.AddWithValue("@P_Id", chemist.P_Id);
                     command.Parameters.AddWithValue("@P_Email", chemist.P_Email);
@@ -129,7 +130,7 @@ namespace MediTech.DataAccess.DAO
         {
             SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command = new SqlCommand(ChemistQueries.DELETE_Chemist, connection))
+                using (var command = new SqlCommand(ChemistQueries.DELETE_CHEMIST, connection))
                 {
                     command.Parameters.AddWithValue("@P_Id", id);
                     command.ExecuteNonQuery();
@@ -153,7 +154,7 @@ namespace MediTech.DataAccess.DAO
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
                 using (var command =
-                       new SqlCommand(ChemistQueries.GET_Chemist_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO,
+                       new SqlCommand(ChemistQueries.GET_CHEMIST_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO,
                            connection))
                 {
                     command.Parameters.AddWithValue("@P_UserName", username ?? (object)DBNull.Value);
@@ -169,7 +170,7 @@ namespace MediTech.DataAccess.DAO
                 }
             });
         }
-        
+
         private Chemist MapToChemist(IDataRecord record)
         {
             return new Chemist(
@@ -183,19 +184,44 @@ namespace MediTech.DataAccess.DAO
                 P_Id = int.Parse(record["P_Id"].ToString())
             };
         }
-        public bool ValidateChemistLogin(string usernameOrEmail, string password) {
-            return SqlDatabaseManager.Instance.Execute(connection => {
-                using (var cmd = new SqlCommand(ChemistQueries.VALIDATE_Chemist_LOGIN, connection)) {
+
+        public bool ValidateChemistLogin(string usernameOrEmail, string password)
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                using (var cmd = new SqlCommand(ChemistQueries.VALIDATE_CHEMIST_LOGIN, connection))
+                {
                     // Check both username and email for login.
                     cmd.Parameters.AddWithValue("@P_UserName", usernameOrEmail);
                     cmd.Parameters.AddWithValue("@P_Email", usernameOrEmail);
                     cmd.Parameters.AddWithValue("@P_Password", password);
 
-                    using (var reader = cmd.ExecuteReader()) {
+                    using (var reader = cmd.ExecuteReader())
+                    {
                         // If the query returns a result, login is successful
                         return reader.HasRows;
                     }
                 }
+            });
+        }
+
+        public IEnumerable<Chemist> GetAllChemists()
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                var chemits = new List<Chemist>();
+                using (var cmd = new SqlCommand(ChemistQueries.GET_ALL_CHEMISTS, connection))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            chemits.Add(MapToChemist(reader));
+                        }
+                    }
+                }
+
+                return chemits;
             });
         }
     }

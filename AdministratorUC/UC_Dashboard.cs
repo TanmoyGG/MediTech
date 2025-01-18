@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using MediTech.Controller;
-using MediTech.DAO;
 using MediTech.DataAccess.Controller;
 using MediTech.DataAccess.DAO;
 
@@ -37,11 +36,11 @@ namespace MediTech.AdministratorUC
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            IAdminDAO adminDao = new AdminDAOImpl();
+            IAdminDAO adminDao = new AdminDaoImpl();
             AdminController adminController = new AdminController(adminDao);
             labelAdmin.Text = adminController.DisplayTotalAdmins().ToString();
             
-            IChemistDAO chemistDao = new ChemistDAOImpl();
+            IChemistDAO chemistDao = new ChemistDaoImpl();
             ChemistController chemistController = new ChemistController(chemistDao);
             labelPharmacist.Text = chemistController.DisplayTotalPharmacists().ToString();
         }

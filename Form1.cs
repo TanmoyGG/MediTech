@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using MediTech.Controller;
-using MediTech.DAO;
 using MediTech.DataAccess.Controller;
 using MediTech.DataAccess.DAO;
 using Org.BouncyCastle.Bcpg;
@@ -87,7 +86,7 @@ namespace MediTech
 
         private bool TryLoginAsAdmin(string username, string password)
         {
-            IAdminDAO adminDao = new AdminDAOImpl();
+            IAdminDAO adminDao = new AdminDaoImpl();
             var adminController = new AdminController(adminDao);
 
             var admin = adminController.GetAdminByUserName(username);
@@ -106,7 +105,7 @@ namespace MediTech
         
         private bool TryLoginAsPharmacist(string username, string password)
         {
-            IChemistDAO chemistDao = new ChemistDAOImpl();
+            IChemistDAO chemistDao = new ChemistDaoImpl();
             var chemistController = new ChemistController(chemistDao);
 
             var chemist = chemistController.GetChemistByUsername(username);
