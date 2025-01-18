@@ -36,9 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtDOB = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtMobileNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,6 +50,8 @@
             this.txtUserRole = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelUserID = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.txtDOB = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.txtMobileNo = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             // 
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(131, 446);
+            this.labelUserName.Location = new System.Drawing.Point(130, 436);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(118, 25);
             this.labelUserName.TabIndex = 2;
@@ -121,6 +121,7 @@
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Location = new System.Drawing.Point(475, 154);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -128,28 +129,7 @@
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(226, 36);
             this.txtName.TabIndex = 6;
-            // 
-            // txtDOB
-            // 
-            this.txtDOB.BorderRadius = 19;
-            this.txtDOB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDOB.DefaultText = "";
-            this.txtDOB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDOB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDOB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDOB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDOB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDOB.ForeColor = System.Drawing.Color.Black;
-            this.txtDOB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDOB.Location = new System.Drawing.Point(475, 240);
-            this.txtDOB.Name = "txtDOB";
-            this.txtDOB.PasswordChar = '\0';
-            this.txtDOB.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtDOB.PlaceholderText = "";
-            this.txtDOB.SelectedText = "";
-            this.txtDOB.Size = new System.Drawing.Size(226, 36);
-            this.txtDOB.TabIndex = 8;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label5
             // 
@@ -160,29 +140,6 @@
             this.label5.Size = new System.Drawing.Size(179, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "DOB (Date Of Birth)";
-            // 
-            // txtMobileNo
-            // 
-            this.txtMobileNo.BorderRadius = 19;
-            this.txtMobileNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMobileNo.DefaultText = "";
-            this.txtMobileNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMobileNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMobileNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMobileNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMobileNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMobileNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNo.ForeColor = System.Drawing.Color.Black;
-            this.txtMobileNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMobileNo.Location = new System.Drawing.Point(475, 320);
-            this.txtMobileNo.Name = "txtMobileNo";
-            this.txtMobileNo.PasswordChar = '\0';
-            this.txtMobileNo.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtMobileNo.PlaceholderText = "";
-            this.txtMobileNo.SelectedText = "";
-            this.txtMobileNo.Size = new System.Drawing.Size(226, 36);
-            this.txtMobileNo.TabIndex = 10;
-            this.txtMobileNo.TextChanged += new System.EventHandler(this.guna2TextBox3_TextChanged);
             // 
             // label6
             // 
@@ -209,6 +166,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Location = new System.Drawing.Point(475, 404);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -216,6 +174,7 @@
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(226, 36);
             this.txtEmail.TabIndex = 12;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label7
             // 
@@ -241,6 +200,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(475, 482);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -248,6 +208,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(226, 36);
             this.txtPassword.TabIndex = 14;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label8
             // 
@@ -348,6 +309,7 @@
             this.txtUserRole.ForeColor = System.Drawing.Color.Black;
             this.txtUserRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUserRole.Location = new System.Drawing.Point(474, 78);
+            this.txtUserRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserRole.Name = "txtUserRole";
             this.txtUserRole.PasswordChar = '\0';
             this.txtUserRole.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -361,7 +323,7 @@
             // 
             this.labelUserID.AutoSize = true;
             this.labelUserID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserID.Location = new System.Drawing.Point(155, 477);
+            this.labelUserID.Location = new System.Drawing.Point(156, 461);
             this.labelUserID.Name = "labelUserID";
             this.labelUserID.Size = new System.Drawing.Size(55, 19);
             this.labelUserID.TabIndex = 20;
@@ -385,11 +347,51 @@
             this.btnExit.TabIndex = 21;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtDOB
+            // 
+            this.txtDOB.BorderRadius = 19;
+            this.txtDOB.Checked = true;
+            this.txtDOB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDOB.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.txtDOB.Location = new System.Drawing.Point(475, 242);
+            this.txtDOB.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.txtDOB.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.txtDOB.Name = "txtDOB";
+            this.txtDOB.Size = new System.Drawing.Size(226, 36);
+            this.txtDOB.TabIndex = 22;
+            this.txtDOB.Value = new System.DateTime(2025, 1, 19, 0, 53, 52, 224);
+            this.txtDOB.ValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
+            // 
+            // txtMobileNo
+            // 
+            this.txtMobileNo.BorderRadius = 19;
+            this.txtMobileNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMobileNo.DefaultText = "";
+            this.txtMobileNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMobileNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMobileNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMobileNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMobileNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMobileNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobileNo.ForeColor = System.Drawing.Color.Black;
+            this.txtMobileNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMobileNo.Location = new System.Drawing.Point(475, 325);
+            this.txtMobileNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMobileNo.Name = "txtMobileNo";
+            this.txtMobileNo.PasswordChar = '\0';
+            this.txtMobileNo.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtMobileNo.PlaceholderText = "";
+            this.txtMobileNo.SelectedText = "";
+            this.txtMobileNo.Size = new System.Drawing.Size(226, 36);
+            this.txtMobileNo.TabIndex = 23;
+            // 
             // UcProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.Controls.Add(this.txtMobileNo);
+            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.labelUserID);
             this.Controls.Add(this.txtUserRole);
@@ -401,9 +403,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtMobileNo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
@@ -428,9 +428,7 @@
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private Guna.UI2.WinForms.Guna2TextBox txtDOB;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtMobileNo;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label label7;
@@ -445,5 +443,7 @@
         private System.Windows.Forms.Label labelUserID;
         private Guna.UI2.WinForms.Guna2TextBox txtUserRole;
         private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2DateTimePicker txtDOB;
+        private Guna.UI2.WinForms.Guna2TextBox txtMobileNo;
     }
 }

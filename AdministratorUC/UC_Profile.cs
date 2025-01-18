@@ -22,10 +22,6 @@ namespace MediTech.AdministratorUC
         {
         }
 
-        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
         }
@@ -38,7 +34,7 @@ namespace MediTech.AdministratorUC
         {
             txtUserRole.Clear();
             txtName.Clear();
-            txtDOB.Clear();
+            txtDOB.Value = DateTime.Now;
             txtMobileNo.Clear();
             txtEmail.Clear();
             txtPassword.Clear();
@@ -55,6 +51,26 @@ namespace MediTech.AdministratorUC
 
         private void txtUserRole_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDOB_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

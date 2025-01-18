@@ -109,7 +109,7 @@
             // 
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(305, 240);
+            this.labelUserName.Location = new System.Drawing.Point(310, 240);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(106, 23);
             this.labelUserName.TabIndex = 8;
@@ -119,7 +119,7 @@
             // 
             this.labelUserID.AutoSize = true;
             this.labelUserID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserID.Location = new System.Drawing.Point(331, 263);
+            this.labelUserID.Location = new System.Drawing.Point(336, 263);
             this.labelUserID.Name = "labelUserID";
             this.labelUserID.Size = new System.Drawing.Size(54, 18);
             this.labelUserID.TabIndex = 9;
