@@ -18,5 +18,16 @@ namespace MediTech.AdministratorUC
         {
             Application.Exit();
         }
+
+
+        private void labelPharmacist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

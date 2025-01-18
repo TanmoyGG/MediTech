@@ -169,7 +169,7 @@ namespace MediTech.DataAccess.DAO
                 }
             });
         }
-
+        
         private Chemist MapToChemist(IDataRecord record)
         {
             return new Chemist(
@@ -182,6 +182,21 @@ namespace MediTech.DataAccess.DAO
             {
                 P_Id = int.Parse(record["P_Id"].ToString())
             };
+        }
+        public bool ValidateChemistLogin(string usernameOrEmail, string password) {
+            return SqlDatabaseManager.Instance.Execute(connection => {
+                using (var cmd = new SqlCommand(ChemistQueries.VALIDATE_Chemist_LOGIN, connection)) {
+                    // Check both username and email for login.
+                    cmd.Parameters.AddWithValue("@P_UserName", usernameOrEmail);
+                    cmd.Parameters.AddWithValue("@P_Email", usernameOrEmail);
+                    cmd.Parameters.AddWithValue("@P_Password", password);
+
+                    using (var reader = cmd.ExecuteReader()) {
+                        // If the query returns a result, login is successful
+                        return reader.HasRows;
+                    }
+                }
+            });
         }
     }
 }

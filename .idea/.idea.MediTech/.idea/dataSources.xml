@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Microsoft SQL Server LocalDB (JetBrains)" uuid="f45951f1-9751-4595-ae59-f7323efe1e89">
+    <data-source source="LOCAL" name="Microsoft SQL Server LocalDB (JetBrains) [2]" uuid="939d27a0-5373-4512-a02b-cca4d5764bc5">
       <driver-ref>sqlserver.localdb.jb</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
-      <jdbc-url>Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tanmo\OneDrive\Documents\MediTechDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True</jdbc-url>
+      <jdbc-url>Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tanmo\OneDrive\Documents\MTDataBase.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

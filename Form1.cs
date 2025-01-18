@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using MediTech.Controller;
+using MediTech.DAO;
+using MediTech.DataAccess.Controller;
+using MediTech.DataAccess.DAO;
+using Org.BouncyCastle.Bcpg;
 
 namespace MediTech
 {
@@ -39,28 +44,82 @@ namespace MediTech
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            switch (txtUserName.Text)
+            var username = txtUserName.Text;
+            var password = txtPasword.Text;
+            TryLoginAsAdmin(username, password);
+            //Console.WriteLine(TryLoginAsAdmin(username, password));
+
+
+            try
             {
-                case "admin" when txtPasword.Text == "admin":
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 {
-                    var a = new Adminstrator();
-                    a.Show();
-                    Hide();
-                    break;
+                    MessageBox.Show("Please fill all the fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                case "pharmacist" when txtPasword.Text == "pharmacist":
+
+                if(username == "master" && password == "master")
                 {
-                    var p = new Pharmacist();
-                    p.Show();
+                    var adminDashboard = new Adminstrator();
+                    adminDashboard.Show();
                     Hide();
-                    break;
+                    return;
                 }
-                default:
-                    MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    break;
+
+                if (TryLoginAsAdmin(username, password) ||
+                    TryLoginAsPharmacist(username, password))
+                {
+                    // Login successful
+                    return;
+                }
+
+
+                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while signing in!", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        private bool TryLoginAsAdmin(string username, string password)
+        {
+            IAdminDAO adminDao = new AdminDAOImpl();
+            var adminController = new AdminController(adminDao);
+
+            var admin = adminController.GetAdminByUserName(username);
+            if (adminController.Login(username, password))
+            {
+                var adminDashboard = new Adminstrator();
+                adminDashboard.Show();
+                Hide();
+                return true;
+            }
+
+                return false;
+        }
+        
+        
+        
+        private bool TryLoginAsPharmacist(string username, string password)
+        {
+            IChemistDAO chemistDao = new ChemistDAOImpl();
+            var chemistController = new ChemistController(chemistDao);
+
+            var chemist = chemistController.GetChemistByUsername(username);
+            if (chemistController.Login(username, password))
+            {
+                var pharmacistDashboard = new Pharmacist();
+                pharmacistDashboard.Show();
+                Hide();
+                return true;
+            }
+                return false;
+            }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {

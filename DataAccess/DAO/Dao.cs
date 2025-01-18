@@ -16,6 +16,9 @@ namespace MediTech.DataAccess.DAO
         void DeleteAdmin(int id);
         int CountTotalAdmins();
         Admin GetAdminByCriteria(string username, int? id, string name, string email, string mobileNo);
+        
+        bool ValidateAdminLogin(string usernameOrEmail, string password);
+        
     }
 
     public interface IChemistDAO
@@ -30,6 +33,8 @@ namespace MediTech.DataAccess.DAO
         void DeleteChemist(int id);
         int CountTotalChemists();
         Chemist GetChemistByCriteria(string username, int? id, string name, string email, string mobileNo);
+        
+        bool ValidateChemistLogin(string usernameOrEmail, string password);
     }
 
     public interface IMedicineDAO

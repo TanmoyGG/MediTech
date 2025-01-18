@@ -12,7 +12,7 @@ namespace MediTech.Controller
         {
             _adminDAO = adminDAO;
         }
-
+        
         public void AddAdmin(Admin admin)
         {
             _adminDAO.InsertAdmin(admin);
@@ -50,6 +50,9 @@ namespace MediTech.Controller
         {
             Console.WriteLine("Admin found successfully.");
             return _adminDAO.GetAdminByUsername(name);
+        }
+        public bool Login(string usernameOrEmail, string password) {
+            return _adminDAO.ValidateAdminLogin(usernameOrEmail, password);
         }
     }
 }

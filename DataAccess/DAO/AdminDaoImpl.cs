@@ -177,5 +177,21 @@ namespace MediTech.DAO
                 A_UserName = reader["A_UserName"].ToString()
             };
         }
+        public bool ValidateAdminLogin(string usernameOrEmail, string password) {
+            return SqlDatabaseManager.Instance.Execute(connection => {
+                using (var cmd = new SqlCommand(AdminQueries.VALIDATE_ADMIN_LOGIN, connection)) {
+                    // Check both username and email for login.
+                    cmd.Parameters.AddWithValue("@A_UserName", usernameOrEmail);
+                    cmd.Parameters.AddWithValue("@A_Email", usernameOrEmail);
+                    cmd.Parameters.AddWithValue("@A_Password", password);
+
+                    using (var reader = cmd.ExecuteReader()) {
+                        // If the query returns a result, login is successful
+                        return reader.HasRows;
+                    }
+                }
+            });
+        }
+        
     }
 }

@@ -22,8 +22,8 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -33,18 +33,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelPharmacist = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.labelAdmin = new System.Windows.Forms.Label();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +68,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(126)))));
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.labelAdmin);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -75,19 +76,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 491);
             this.panel1.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(111, 446);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 28);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "69";
             // 
             // label6
             // 
@@ -123,7 +111,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(126)))));
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.labelPharmacist);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
@@ -132,18 +120,19 @@
             this.panel2.Size = new System.Drawing.Size(281, 491);
             this.panel2.TabIndex = 2;
             // 
-            // label9
+            // labelPharmacist
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(121, 446);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 28);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "69";
+            this.labelPharmacist.AutoSize = true;
+            this.labelPharmacist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.labelPharmacist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelPharmacist.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPharmacist.ForeColor = System.Drawing.Color.White;
+            this.labelPharmacist.Location = new System.Drawing.Point(121, 446);
+            this.labelPharmacist.Name = "labelPharmacist";
+            this.labelPharmacist.Size = new System.Drawing.Size(36, 28);
+            this.labelPharmacist.TabIndex = 4;
+            this.labelPharmacist.Text = "69";
+            this.labelPharmacist.Click += new System.EventHandler(this.labelPharmacist_Click);
             // 
             // label8
             // 
@@ -206,11 +195,43 @@
             this.btnExit.TabIndex = 4;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // labelAdmin
+            // 
+            this.labelAdmin.AutoSize = true;
+            this.labelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.labelAdmin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelAdmin.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdmin.ForeColor = System.Drawing.Color.White;
+            this.labelAdmin.Location = new System.Drawing.Point(101, 446);
+            this.labelAdmin.Name = "labelAdmin";
+            this.labelAdmin.Size = new System.Drawing.Size(36, 28);
+            this.labelAdmin.TabIndex = 3;
+            this.labelAdmin.Text = "69";
+            this.labelAdmin.Click += new System.EventHandler(this.labelAdmin_Click);
+            // 
+            // btnReload
+            // 
+            this.btnReload.BackColor = System.Drawing.Color.Transparent;
+            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReload.FillColor = System.Drawing.Color.Transparent;
+            this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReload.ForeColor = System.Drawing.Color.Transparent;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnReload.Location = new System.Drawing.Point(148, 13);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(24, 24);
+            this.btnReload.TabIndex = 5;
+            // 
             // UcDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
@@ -239,12 +260,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelPharmacist;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Button btnExit;
+        private System.Windows.Forms.Label labelAdmin;
+        private Guna.UI2.WinForms.Guna2Button btnReload;
     }
 }

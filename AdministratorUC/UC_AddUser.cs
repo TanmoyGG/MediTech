@@ -44,28 +44,31 @@ namespace MediTech.AdministratorUC
                     string.IsNullOrWhiteSpace(txtMobileNo.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
                     string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
                 {
-                    MessageBox.Show("Please fill all the fields!");
+                    MessageBox.Show("Please fill all the fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 // Validate Name (No special characters except dot (.) and comma (,))
                 if (!Regex.IsMatch(txtName.Text, @"^[a-zA-Z.,\s]+$"))
                 {
-                    MessageBox.Show("Name can only contain letters, spaces, dot (.), and comma (,).");
+                    MessageBox.Show("Name can only contain letters, spaces, dot (.), and comma (,).", "Name Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 // Validate Mobile Number (Must start with 01 and have exactly 11 digits)
                 if (!Regex.IsMatch(txtMobileNo.Text, @"^01\d{9}$"))
                 {
-                    MessageBox.Show("Mobile number must start with '01' and have exactly 11 digits.");
+                    MessageBox.Show("Mobile number must start with '01' and have exactly 11 digits.", "Mobile Number Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 // Validate Email Address
                 if (!Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
                 {
-                    MessageBox.Show("Please enter a valid email address.");
+                    MessageBox.Show("Please enter a valid email address.", "Email Address Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                     return;
                 }
 
@@ -73,7 +76,7 @@ namespace MediTech.AdministratorUC
                 if (!Regex.IsMatch(txtUserName.Text, @"^[a-z0-9]+$"))
                 {
                     MessageBox.Show(
-                        "Username can only contain lowercase letters and numbers, with no spaces or special characters.");
+                        "Username can only contain lowercase letters and numbers, with no spaces or special characters.","UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -82,14 +85,15 @@ namespace MediTech.AdministratorUC
                         @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"))
                 {
                     MessageBox.Show(
-                        "Password must be at least 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.");
+                        "Password must be at least 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.","Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 // Check if Username is Unique
                 if (!IsUsernameUnique(txtUserName.Text))
                 {
-                    MessageBox.Show("Username is already taken. Please choose a different username.");
+                    MessageBox.Show("Username is already taken. Please choose a different username.", "UserName Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -109,7 +113,7 @@ namespace MediTech.AdministratorUC
                         A_Password = txtPassword.Text
                     };
 
-                    adminController.AddAdmin(admin); // Uncomment to save the admin
+                    adminController.AddAdmin(admin); // for email sending
                     MessageBox.Show("Admin Added Successfully\nLogin Details sent to Email");
                     btnReset_Click(sender, e);
                 }
@@ -128,13 +132,13 @@ namespace MediTech.AdministratorUC
                         P_Password = txtPassword.Text
                     };
 
-                    chemistController.InsertChemist(chemist); // Uncomment to save the pharmacist
+                    chemistController.InsertChemist(chemist); // for email sending
                     MessageBox.Show("Pharmacist Added Successfully\nLogin Details sent to Email");
                     btnReset_Click(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show("Invalid User Role");
+                    MessageBox.Show("Invalid User Role", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
