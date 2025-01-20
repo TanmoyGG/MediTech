@@ -30,7 +30,7 @@ namespace MediTech.AdministratorUC
             //for admin
             IAdminDAO adminDao = new AdminDaoImpl();
             AdminController adminController = new AdminController(adminDao);
-            IEnumerable<Admin> allAdmins = adminController.GetAllAdmins();
+            IEnumerable<Admin> allAdmins = adminController.GetAllAdmins(); //problem
             guna2DataGridView1.AutoGenerateColumns = true;
             guna2DataGridView1.DataSource = allAdmins.ToList();
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -60,12 +60,29 @@ namespace MediTech.AdministratorUC
             {
                 MessageBox.Show(@"Please select a row to delete.");
             }
-
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnDelete2_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView2.SelectedRows.Count > 0)
+            {
+                int selectedrowindex = guna2DataGridView2.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = guna2DataGridView2.Rows[selectedrowindex];
+                int id = Convert.ToInt32(selectedRow.Cells["P_Id"].Value);
+                IChemistDAO chemistDao = new ChemistDaoImpl();
+                ChemistController chemistController = new ChemistController(chemistDao);
+                chemistController.DeleteChemist(id);
+                UcViewUser_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show(@"Please select a row to delete.");
+            }
         }
     }
 }

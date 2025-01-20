@@ -192,6 +192,7 @@ namespace MediTech.DataAccess.DAO
             });
         }
         
+        //problem
         public IEnumerable<Admin> GetAllAdmins() {
             return SqlDatabaseManager.Instance.Execute(connection => {
                 var admins = new List<Admin>();

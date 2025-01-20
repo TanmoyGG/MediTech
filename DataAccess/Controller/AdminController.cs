@@ -48,6 +48,7 @@ namespace MediTech.Controller
             return count;
         }
         
+        //problem
         public IEnumerable<Admin> GetAllAdmins() {
             return _adminDAO.GetAllAdmins();
         }

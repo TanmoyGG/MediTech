@@ -67,6 +67,7 @@ namespace MediTech.DataAccess
         }
 
 
+        //problem
         public string GetValue(string key)
         {
             var keys = key.Split('/');
@@ -119,6 +120,7 @@ namespace MediTech.DataAccess
         }
 
         // Existing methods for database configurations
+        //problem
         public string GetSqlServerName()
         {
             return GetValue("SqlServerName");
@@ -144,6 +146,7 @@ namespace MediTech.DataAccess
             return GetValue("Password");
         }
 
+        //problem
         public string GetConnectionString()
         {
             var serverName = GetSqlServerName();
