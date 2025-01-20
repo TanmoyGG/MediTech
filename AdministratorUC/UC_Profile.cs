@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using MediTech.Controller;
+using MediTech.DataAccess.Controller;
+using MediTech.DataAccess.DAO;
+using MediTech.Model;
 
 namespace MediTech.AdministratorUC
 {
@@ -28,6 +32,25 @@ namespace MediTech.AdministratorUC
 
         private void UC_Profile_Load(object sender, EventArgs e)
         {
+            if (globalVariable.AdminLogin != null)
+            {
+                txtUserRole.Text = "Admin";
+                txtName.Text = globalVariable.AdminLogin.A_Name;
+                txtDOB.Value = globalVariable.AdminLogin.A_Dob;
+                txtMobileNo.Text = globalVariable.AdminLogin.A_MobileNo;
+                txtEmail.Text = globalVariable.AdminLogin.A_Email;
+                txtPassword.Text = globalVariable.AdminLogin.A_Password;
+            }
+            else
+            {
+                txtUserRole.Text = "Chemist";
+                txtName.Text = globalVariable.ChemistLogin.P_Name;
+                txtDOB.Value = globalVariable.ChemistLogin.P_Dob;
+                txtMobileNo.Text = globalVariable.ChemistLogin.P_MobileNo;
+                txtEmail.Text = globalVariable.ChemistLogin.P_Email;
+                txtPassword.Text = globalVariable.ChemistLogin.P_Password;
+            }
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)

@@ -45,10 +45,8 @@ namespace MediTech
         {
             var username = txtUserName.Text;
             var password = txtPasword.Text;
-            TryLoginAsAdmin(username, password);
-            //Console.WriteLine(TryLoginAsAdmin(username, password));
-
-
+            //TryLoginAsAdmin(username, password);
+            
             try
             {
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
@@ -68,7 +66,7 @@ namespace MediTech
                 if (TryLoginAsAdmin(username, password) ||
                     TryLoginAsPharmacist(username, password))
                 {
-                    // Login successful
+                    Console.WriteLine("Login successful");
                     return;
                 }
 
@@ -92,6 +90,7 @@ namespace MediTech
             var admin = adminController.GetAdminByUserName(username);
             if (adminController.Login(username, password))
             {
+                globalVariable.AdminLogin = admin;
                 var adminDashboard = new Adminstrator();
                 adminDashboard.Show();
                 Hide();
@@ -111,6 +110,7 @@ namespace MediTech
             var chemist = chemistController.GetChemistByUsername(username);
             if (chemistController.Login(username, password))
             {
+                globalVariable.ChemistLogin = chemist;
                 var pharmacistDashboard = new Pharmacist();
                 pharmacistDashboard.Show();
                 Hide();

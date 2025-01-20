@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using MediTech.Model;
 
 namespace MediTech
 {
     public partial class Adminstrator : Form
     {
+        
         public Adminstrator()
         {
             InitializeComponent();
@@ -16,6 +18,8 @@ namespace MediTech
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            globalVariable.AdminLogin = null;
+            globalVariable.ChemistLogin = null;
             var fm = new Form1();
             fm.Show();
             Hide();
