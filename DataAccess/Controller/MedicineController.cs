@@ -88,5 +88,15 @@ namespace MediTech.DataAccess.Controller
         {
             return _medicineDao.GetMedicineByPartialCriteria(name, id, groupName);
         }
+        
+        public int CountTotalValidMedicines()
+        {
+            return _medicineDao.CountTotalValidMedicines();
+        }
+        
+        public int CountTotalExpiredMedicines()
+        {
+            return _medicineDao.CountTotalExpiredMedicines();
+        }
     }
 }

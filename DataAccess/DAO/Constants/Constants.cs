@@ -104,6 +104,10 @@
 
         public const string GET_MEDICINE_BY_PARTIAL_NAME_OR_PARTIAL_ID_OR_PARTIAL_GROUP_NAME =
             "SELECT * FROM Medicine WHERE M_Name LIKE '%' + @M_Name + '%' OR CAST(M_Id AS VARCHAR) LIKE '%' + @M_Id + '%' OR M_GroupName LIKE '%' + @M_GroupName + '%'"; // Retained for partial matching
+        
+        public const string COUNT_TOTAL_VALID_MEDICINES = "SELECT COUNT(*) FROM Medicine WHERE ExpDate > GETDATE()";
+        
+        public const string COUNT_TOTAL_EXPIRED_MEDICINES = "SELECT COUNT(*) FROM Medicine WHERE ExpDate < GETDATE()";
     }
 
     public static class SalesReportQueries

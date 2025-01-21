@@ -191,6 +191,29 @@ namespace MediTech.DataAccess.DAO
             });
         }
 
+        public int CountTotalValidMedicines()
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                using (var command = new SqlCommand(MedicineQueries.COUNT_TOTAL_VALID_MEDICINES, connection))
+                {
+                    return (int)command.ExecuteScalar();
+                }
+            });
+        }
+
+        public int CountTotalExpiredMedicines()
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                using (var command = new SqlCommand(MedicineQueries.COUNT_TOTAL_EXPIRED_MEDICINES, connection))
+                {
+                    return (int)command.ExecuteScalar();
+                }
+            });
+        }
+
+
         public List<Medicine> GetMedicineByPartialCriteria(string name, string id, string groupName)
         {
             return SqlDatabaseManager.Instance.Execute(connection =>

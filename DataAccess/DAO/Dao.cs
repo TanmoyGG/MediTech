@@ -56,6 +56,8 @@ namespace MediTech.DataAccess.DAO
         void UpdateMedicine(Medicine medicine);
         void DeleteMedicine(int id);
         int CountTotalMedicines();
+        int CountTotalValidMedicines();
+        int CountTotalExpiredMedicines();
         List<Medicine> GetMedicineByPartialCriteria(string name, string id, string groupName);
     }
 
