@@ -58,7 +58,8 @@ namespace MediTech.AdministratorUC
                 // Validate Mobile Number (Must start with 01 and have exactly 11 digits)
                 if (!Regex.IsMatch(txtMobileNo.Text, @"^01\d{9}$"))
                 {
-                    MessageBox.Show("Mobile number must start with '01' and have exactly 11 digits.", "Mobile Number Error",
+                    MessageBox.Show("Mobile number must start with '01' and have exactly 11 digits.",
+                        "Mobile Number Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -75,7 +76,8 @@ namespace MediTech.AdministratorUC
                 if (!Regex.IsMatch(txtUserName.Text, @"^[a-z0-9]+$"))
                 {
                     MessageBox.Show(
-                        "Username can only contain lowercase letters and numbers, with no spaces or special characters.","UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Username can only contain lowercase letters and numbers, with no spaces or special characters.",
+                        "UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -84,7 +86,8 @@ namespace MediTech.AdministratorUC
                         @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"))
                 {
                     MessageBox.Show(
-                        "Password must be at least 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.","Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Password must be at least 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.",
+                        "Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -112,7 +115,7 @@ namespace MediTech.AdministratorUC
                         A_Password = txtPassword.Text
                     };
 
-                    adminController.AddAdmin(admin); // for email sending
+                    adminController.AddAdmin(admin); // add admin + send email 
                     MessageBox.Show("Admin Added Successfully\nLogin Details sent to Email");
                     btnReset_Click(sender, e);
                 }
@@ -131,8 +134,9 @@ namespace MediTech.AdministratorUC
                         P_Password = txtPassword.Text
                     };
 
-                    chemistController.InsertChemist(chemist); // for email sending
-                    MessageBox.Show("Pharmacist Added Successfully\nLogin Details sent to Email");
+                    chemistController.InsertChemist(chemist); //add pharmacist and send email 
+                    MessageBox.Show("Pharmacist Added Successfully\nLogin Details sent to Email", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnReset_Click(sender, e);
                 }
                 else

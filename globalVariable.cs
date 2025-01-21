@@ -4,19 +4,8 @@ namespace MediTech
 {
     public class globalVariable
     {
-        private static Admin adminLogin;
-        private static Chemist chemistLogin;
+        public static Admin AdminLogin { get; set; }
 
-        public static Admin AdminLogin
-        {
-            get => adminLogin;
-            set => adminLogin = value;
-        }
-
-        public static Chemist ChemistLogin
-        {
-            get => chemistLogin;
-            set => chemistLogin = value;
-        }
+        public static Chemist ChemistLogin { get; set; }
     }
 }

@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using MediTech.Controller;
 using MediTech.DataAccess.Controller;
 using MediTech.DataAccess.DAO;
-using Org.BouncyCastle.Bcpg;
 
 namespace MediTech
 {
@@ -46,7 +45,7 @@ namespace MediTech
             var username = txtUserName.Text;
             var password = txtPasword.Text;
             //TryLoginAsAdmin(username, password);
-            
+
             try
             {
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
@@ -55,7 +54,7 @@ namespace MediTech
                     return;
                 }
 
-                if(username == "master" && password == "master")
+                if (username == "master" && password == "master")
                 {
                     var adminDashboard = new Adminstrator();
                     adminDashboard.Show();
@@ -97,11 +96,10 @@ namespace MediTech
                 return true;
             }
 
-                return false;
+            return false;
         }
-        
-        
-        
+
+
         private bool TryLoginAsPharmacist(string username, string password)
         {
             IChemistDAO chemistDao = new ChemistDaoImpl();
@@ -116,9 +114,10 @@ namespace MediTech
                 Hide();
                 return true;
             }
-                return false;
-            }
-        
+
+            return false;
+        }
+
 
         private void label2_Click(object sender, EventArgs e)
         {

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using MediTech.Model;
 
 namespace MediTech
 {
     public partial class Adminstrator : Form
     {
-        
         public Adminstrator()
         {
             InitializeComponent();

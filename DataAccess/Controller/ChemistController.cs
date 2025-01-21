@@ -69,12 +69,14 @@ namespace MediTech.DataAccess.Controller
         {
             return _chemistDao.GetChemistByCriteria(username, id, name, email, mobileNo);
         }
-        
-        public bool Login(string usernameOrEmail, string password) {
+
+        public bool Login(string usernameOrEmail, string password)
+        {
             return _chemistDao.ValidateChemistLogin(usernameOrEmail, password);
         }
-        
-        public IEnumerable<Chemist> GetAllChemists() {
+
+        public IEnumerable<Chemist> GetAllChemists()
+        {
             return _chemistDao.GetAllChemists();
         }
     }

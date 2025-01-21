@@ -26,22 +26,20 @@ namespace MediTech.AdministratorUC
 
         private void labelPharmacist_Click(object sender, EventArgs e)
         {
-
         }
 
         private void labelAdmin_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnReload_Click(object sender, EventArgs e)
         {
             IAdminDAO adminDao = new AdminDaoImpl();
-            AdminController adminController = new AdminController(adminDao);
+            var adminController = new AdminController(adminDao);
             labelAdmin.Text = adminController.DisplayTotalAdmins().ToString();
-            
+
             IChemistDAO chemistDao = new ChemistDaoImpl();
-            ChemistController chemistController = new ChemistController(chemistDao);
+            var chemistController = new ChemistController(chemistDao);
             labelPharmacist.Text = chemistController.DisplayTotalPharmacists().ToString();
         }
     }

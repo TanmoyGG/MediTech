@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
+using MediTech.OTP;
 
 namespace MediTech.Controller
 {
@@ -13,16 +14,18 @@ namespace MediTech.Controller
         {
             _adminDAO = adminDAO;
         }
-        
+
         public void AddAdmin(Admin admin)
         {
             _adminDAO.InsertAdmin(admin);
+            EmailService.Instance.SendLoginDetailsToEmail(admin.A_Email, admin.A_UserName, admin.A_Password);
             Console.WriteLine("Admin added successfully.");
         }
 
         public void UpdateAdmin(Admin admin)
         {
             _adminDAO.UpdateAdmin(admin);
+            EmailService.Instance.SendLoginDetailsToEmail(admin.A_Email, admin.A_UserName, admin.A_Password);
             Console.WriteLine("Admin updated successfully.");
         }
 
@@ -47,9 +50,10 @@ namespace MediTech.Controller
             Console.WriteLine($"Total Admins: {count}");
             return count;
         }
-        
+
         //problem
-        public IEnumerable<Admin> GetAllAdmins() {
+        public IEnumerable<Admin> GetAllAdmins()
+        {
             return _adminDAO.GetAllAdmins();
         }
 
@@ -58,10 +62,10 @@ namespace MediTech.Controller
             Console.WriteLine("Admin found successfully.");
             return _adminDAO.GetAdminByUsername(name);
         }
-        public bool Login(string usernameOrEmail, string password) {
+
+        public bool Login(string usernameOrEmail, string password)
+        {
             return _adminDAO.ValidateAdminLogin(usernameOrEmail, password);
         }
-        
-        
     }
 }

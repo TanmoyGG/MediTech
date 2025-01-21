@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pharmacist));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnModifyMedicine = new Guna.UI2.WinForms.Guna2Button();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnSellMedicine = new Guna.UI2.WinForms.Guna2Button();
@@ -40,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uC_P_ModifyMedicine1 = new MediTech.PharmacistUC.UC_P_ModifyMedicine();
             this.ucProfile1 = new MediTech.AdministratorUC.UcProfile();
             this.uC_P_SellMedicine1 = new MediTech.PharmacistUC.UC_P_SellMedicine();
             this.uC_P_ViewMedicine1 = new MediTech.PharmacistUC.UC_P_ViewMedicine();
@@ -50,9 +52,7 @@
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnModifyMedicine = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.uC_P_ModifyMedicine1 = new MediTech.PharmacistUC.UC_P_ModifyMedicine();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,6 +75,31 @@
             this.panel1.Size = new System.Drawing.Size(373, 627);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnModifyMedicine
+            // 
+            this.btnModifyMedicine.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnModifyMedicine.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.btnModifyMedicine.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnModifyMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModifyMedicine.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnModifyMedicine.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnModifyMedicine.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnModifyMedicine.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnModifyMedicine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
+            this.btnModifyMedicine.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyMedicine.ForeColor = System.Drawing.Color.White;
+            this.btnModifyMedicine.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnModifyMedicine.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
+            this.btnModifyMedicine.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnModifyMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnModifyMedicine.Image")));
+            this.btnModifyMedicine.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnModifyMedicine.Location = new System.Drawing.Point(161, 444);
+            this.btnModifyMedicine.Name = "btnModifyMedicine";
+            this.btnModifyMedicine.Size = new System.Drawing.Size(212, 45);
+            this.btnModifyMedicine.TabIndex = 8;
+            this.btnModifyMedicine.Text = "Modify Medicine";
+            this.btnModifyMedicine.Click += new System.EventHandler(this.btnModifyMedicine_Click);
             // 
             // btnProfile
             // 
@@ -260,6 +285,14 @@
             this.panel2.Size = new System.Drawing.Size(767, 627);
             this.panel2.TabIndex = 1;
             // 
+            // uC_P_ModifyMedicine1
+            // 
+            this.uC_P_ModifyMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
+            this.uC_P_ModifyMedicine1.Location = new System.Drawing.Point(0, 0);
+            this.uC_P_ModifyMedicine1.Name = "uC_P_ModifyMedicine1";
+            this.uC_P_ModifyMedicine1.Size = new System.Drawing.Size(767, 627);
+            this.uC_P_ModifyMedicine1.TabIndex = 5;
+            // 
             // ucProfile1
             // 
             this.ucProfile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
@@ -320,40 +353,9 @@
             // 
             this.guna2Elipse5.TargetControl = this.panel2;
             // 
-            // btnModifyMedicine
-            // 
-            this.btnModifyMedicine.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnModifyMedicine.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.btnModifyMedicine.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnModifyMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModifyMedicine.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnModifyMedicine.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnModifyMedicine.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnModifyMedicine.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnModifyMedicine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(66)))));
-            this.btnModifyMedicine.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifyMedicine.ForeColor = System.Drawing.Color.White;
-            this.btnModifyMedicine.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnModifyMedicine.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(94)))), ((int)(((byte)(127)))));
-            this.btnModifyMedicine.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnModifyMedicine.Location = new System.Drawing.Point(161, 444);
-            this.btnModifyMedicine.Name = "btnModifyMedicine";
-            this.btnModifyMedicine.Size = new System.Drawing.Size(212, 45);
-            this.btnModifyMedicine.TabIndex = 8;
-            this.btnModifyMedicine.Text = "Modify Medicine";
-            this.btnModifyMedicine.Click += new System.EventHandler(this.btnModifyMedicine_Click);
-            // 
             // guna2Elipse6
             // 
             this.guna2Elipse6.TargetControl = this.panel2;
-            // 
-            // uC_P_ModifyMedicine1
-            // 
-            this.uC_P_ModifyMedicine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(209)))));
-            this.uC_P_ModifyMedicine1.Location = new System.Drawing.Point(0, 0);
-            this.uC_P_ModifyMedicine1.Name = "uC_P_ModifyMedicine1";
-            this.uC_P_ModifyMedicine1.Size = new System.Drawing.Size(767, 627);
-            this.uC_P_ModifyMedicine1.TabIndex = 5;
             // 
             // Pharmacist
             // 

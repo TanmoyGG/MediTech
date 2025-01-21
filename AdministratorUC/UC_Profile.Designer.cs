@@ -314,6 +314,7 @@
             this.txtUserRole.PasswordChar = '\0';
             this.txtUserRole.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtUserRole.PlaceholderText = "";
+            this.txtUserRole.ReadOnly = true;
             this.txtUserRole.SelectedText = "";
             this.txtUserRole.Size = new System.Drawing.Size(226, 36);
             this.txtUserRole.TabIndex = 19;

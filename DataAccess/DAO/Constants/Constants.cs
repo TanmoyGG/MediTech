@@ -24,13 +24,14 @@
 
         public const string GET_ADMIN_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO =
             "SELECT * FROM Admin WHERE A_UserName = @A_UserName OR A_Id = @A_Id OR A_Name = @A_Name OR A_Email = @A_Email OR A_MobileNo = @A_MobileNo";
-        
+
         public const string VALIDATE_ADMIN_LOGIN = "SELECT A_ID FROM Admin " +
                                                    "WHERE (A_UserName COLLATE Latin1_General_BIN = @A_UserName OR A_Email = @A_Email) " +
                                                    "AND A_Password = @A_Password ";
+
         public const string GET_ALL_ADMINS = "SELECT * FROM Admin";
     }
-    
+
     public static class ChemistQueries
     {
         public const string GET_CHEMIST_BY_ID = "SELECT * FROM Chemist WHERE P_Id = @P_Id";
@@ -55,10 +56,11 @@
 
         public const string GET_CHEMIST_BY_USERNAME_OR_ID_OR_NAME_OR_EMAIL_OR_MOBILE_NO =
             "SELECT * FROM Chemist WHERE P_UserName = @P_UserName OR P_Id = @P_Id OR P_Name = @P_Name OR P_Email = @P_Email OR P_MobileNo = @P_MobileNo";
-        
+
         public const string VALIDATE_CHEMIST_LOGIN = "SELECT P_ID FROM Chemist " +
-                                                   "WHERE (P_UserName COLLATE Latin1_General_BIN = @P_UserName OR P_Email = @P_Email) " +
-                                                   "AND P_Password = @P_Password ";
+                                                     "WHERE (P_UserName COLLATE Latin1_General_BIN = @P_UserName OR P_Email = @P_Email) " +
+                                                     "AND P_Password = @P_Password ";
+
         public const string GET_ALL_CHEMISTS = "SELECT * FROM Chemist";
     }
 
@@ -88,7 +90,7 @@
             "SELECT * FROM Medicine WHERE ExpDate BETWEEN GETDATE() AND @ExpiryDate";
 
         public const string INSERT_MEDICINE =
-            "INSERT INTO Medicine (M_Name, M_GroupName, M_Type, Price, ManuDate, ExpDate, Quantity) VALUES (@M_Name, @M_GroupName, @M_Type, @Price, @ManuDate, @ExpDate, @Quantity)";
+            "INSERT INTO Medicine (M_Name, M_GroupName, M_Type, Price, ManuDate, ExpDate, Quantity) VALUES ( @M_Name, @M_GroupName, @M_Type, @Price, @ManuDate, @ExpDate, @Quantity)";
 
         public const string UPDATE_MEDICINE =
             "UPDATE Medicine SET M_Name = @M_Name, M_GroupName = @M_GroupName, M_Type = @M_Type, Price = @Price, ManuDate = @ManuDate, ExpDate = @ExpDate, Quantity = @Quantity WHERE M_Id = @M_Id";

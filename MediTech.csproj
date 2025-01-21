@@ -147,7 +147,7 @@
         <Compile Include="Form1.Designer.cs">
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
-        <Compile Include="globalVariable.cs" />
+        <Compile Include="globalVariable.cs"/>
         <Compile Include="Model\Admin.cs"/>
         <Compile Include="Model\Medicine.cs"/>
         <Compile Include="Model\OneTimePass.cs"/>

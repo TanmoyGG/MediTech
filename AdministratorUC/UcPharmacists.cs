@@ -37,6 +37,8 @@ namespace MediTech.AdministratorUC
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            labelUserName.Text = " UserName";
+            labelUserID.Text = " UserID";
             txtSearch.Clear();
             txtName.Clear();
             txtDOB.Value = DateTime.Now;

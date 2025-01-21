@@ -171,20 +171,6 @@ namespace MediTech.DataAccess.DAO
             });
         }
 
-        private Chemist MapToChemist(IDataRecord record)
-        {
-            return new Chemist(
-                record["P_Email"].ToString(),
-                record["P_Name"].ToString(),
-                DateTime.Parse(record["P_Dob"].ToString()),
-                record["P_MobileNo"].ToString(),
-                record["P_UserName"].ToString(),
-                record["P_Password"].ToString())
-            {
-                P_Id = int.Parse(record["P_Id"].ToString())
-            };
-        }
-
         public bool ValidateChemistLogin(string usernameOrEmail, string password)
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
@@ -214,15 +200,26 @@ namespace MediTech.DataAccess.DAO
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            chemits.Add(MapToChemist(reader));
-                        }
+                        while (reader.Read()) chemits.Add(MapToChemist(reader));
                     }
                 }
 
                 return chemits;
             });
+        }
+
+        private Chemist MapToChemist(IDataRecord record)
+        {
+            return new Chemist(
+                record["P_Email"].ToString(),
+                record["P_Name"].ToString(),
+                DateTime.Parse(record["P_Dob"].ToString()),
+                record["P_MobileNo"].ToString(),
+                record["P_UserName"].ToString(),
+                record["P_Password"].ToString())
+            {
+                P_Id = int.Parse(record["P_Id"].ToString())
+            };
         }
     }
 }

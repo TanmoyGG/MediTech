@@ -25,14 +25,14 @@ namespace MediTech.DataAccess
             // Pre-populate the connection pool
             for (var i = 0; i < _poolSize; i++) _connectionPool.Enqueue(CreateConnection());
         }
-        
+
         public static SqlDatabaseManager Instance => instance.Value; //problem
 
         /// <summary>
         ///     Creates a new SQL connection using the connection string from ConfigLoader.
         /// </summary>
         /// <returns>A new SqlConnection object.</returns>
-        
+
         //problem
         private SqlConnection CreateConnection()
         {
