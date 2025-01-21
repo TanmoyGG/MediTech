@@ -46,6 +46,13 @@ namespace MediTech.PharmacistUC
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            IMedicineDAO medicineDao = new MedicineDAOImpl();
+            MedicineController medicineController = new MedicineController(medicineDao);
+            var allMedicines = medicineController.GetMedicineByPartialCriteria(txtSearch.Text);
+
+            guna2DataGridView1.AutoGenerateColumns = true;
+            guna2DataGridView1.DataSource = allMedicines;
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
         }
 

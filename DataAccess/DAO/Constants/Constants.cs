@@ -30,6 +30,9 @@
                                                    "AND A_Password = @A_Password ";
 
         public const string GET_ALL_ADMINS = "SELECT * FROM Admin";
+        
+        public const string GET_ADMIN_BY_PARTIAL_NAME =
+            "SELECT * FROM Admin WHERE A_Name LIKE '%' + @A_Name + '%'"; // Retained for partial matching
     }
 
     public static class ChemistQueries
@@ -62,6 +65,9 @@
                                                      "AND P_Password = @P_Password ";
 
         public const string GET_ALL_CHEMISTS = "SELECT * FROM Chemist";
+        
+        public const string GET_CHEMIST_BY_PARTIAL_NAME =
+            "SELECT * FROM Chemist WHERE P_Name LIKE '%' + @P_Name + '%'"; // Retained for partial matching
     }
 
     public static class MedicineQueries
@@ -102,8 +108,8 @@
         public const string GET_MEDICINE_BY_NAME_OR_ID_OR_GROUP_NAME =
             "SELECT * FROM Medicine WHERE M_Name = @M_Name OR M_Id = @M_Id OR M_GroupName = @M_GroupName";
 
-        public const string GET_MEDICINE_BY_PARTIAL_NAME_OR_PARTIAL_ID_OR_PARTIAL_GROUP_NAME =
-            "SELECT * FROM Medicine WHERE M_Name LIKE '%' + @M_Name + '%' OR CAST(M_Id AS VARCHAR) LIKE '%' + @M_Id + '%' OR M_GroupName LIKE '%' + @M_GroupName + '%'"; // Retained for partial matching
+        public const string GET_MEDICINE_BY_PARTIAL_NAME =
+            "SELECT * FROM Medicine WHERE M_Name LIKE '%' + @M_Name + '%'"; // Retained for partial matching
         
         public const string COUNT_TOTAL_VALID_MEDICINES = "SELECT COUNT(*) FROM Medicine WHERE ExpDate > GETDATE()";
         

@@ -20,6 +20,8 @@ namespace MediTech.DataAccess.DAO
         bool ValidateAdminLogin(string usernameOrEmail, string password);
 
         IEnumerable<Admin> GetAllAdmins();
+        
+        //List<Admin> SearchAdmin(string name);
     }
 
     public interface IChemistDAO
@@ -58,7 +60,7 @@ namespace MediTech.DataAccess.DAO
         int CountTotalMedicines();
         int CountTotalValidMedicines();
         int CountTotalExpiredMedicines();
-        List<Medicine> GetMedicineByPartialCriteria(string name, string id, string groupName);
+        List<Medicine> SearchMedicine(string name);
     }
 
     public interface ISalesReportDAO

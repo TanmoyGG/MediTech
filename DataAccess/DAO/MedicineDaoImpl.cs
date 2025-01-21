@@ -212,19 +212,17 @@ namespace MediTech.DataAccess.DAO
                 }
             });
         }
+        
 
-
-        public List<Medicine> GetMedicineByPartialCriteria(string name, string id, string groupName)
+        public List<Medicine> SearchMedicine(string name)
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
                 using (var command =
-                       new SqlCommand(MedicineQueries.GET_MEDICINE_BY_PARTIAL_NAME_OR_PARTIAL_ID_OR_PARTIAL_GROUP_NAME,
+                       new SqlCommand(MedicineQueries.GET_MEDICINE_BY_PARTIAL_NAME,
                            connection))
                 {
                     command.Parameters.AddWithValue("@M_Name", name ?? string.Empty);
-                    command.Parameters.AddWithValue("@M_Id", id ?? string.Empty);
-                    command.Parameters.AddWithValue("@M_GroupName", groupName ?? string.Empty);
                     return GetMedicinesFromReader(command);
                 }
             });
