@@ -58,20 +58,28 @@ namespace MediTech.PharmacistUC
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
+            try
             {
-                var selectedrowindex = guna2DataGridView1.SelectedCells[0].RowIndex;
-                var selectedRow = guna2DataGridView1.Rows[selectedrowindex];
-                var id = Convert.ToInt32(selectedRow.Cells["M_ID"].Value);
-                IMedicineDAO medicineDao = new MedicineDAOImpl();
-                MedicineController medicineController = new MedicineController(medicineDao);
-                var deleteMedicine = new MedicineController(medicineDao);
-                deleteMedicine.DeleteMedicine(id);
-                UC_P_ViewMedicine_Load(sender, e);
+                if (guna2DataGridView1.SelectedRows.Count > 0)
+                {
+                    var selectedrowindex = guna2DataGridView1.SelectedCells[0].RowIndex;
+                    var selectedRow = guna2DataGridView1.Rows[selectedrowindex];
+                    var id = Convert.ToInt32(selectedRow.Cells["M_ID"].Value);
+                    IMedicineDAO medicineDao = new MedicineDAOImpl();
+                    MedicineController medicineController = new MedicineController(medicineDao);
+                    var deleteMedicine = new MedicineController(medicineDao);
+                    deleteMedicine.DeleteMedicine(id);
+                    UC_P_ViewMedicine_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show(@"Please select a row to delete.");
+                }
             }
-            else
+            catch (Exception exception)
             {
-                MessageBox.Show(@"Please select a row to delete.");
+                Console.WriteLine(exception);
+                throw;
             }
         }
     }

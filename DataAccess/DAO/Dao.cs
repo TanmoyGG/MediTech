@@ -75,5 +75,7 @@ namespace MediTech.DataAccess.DAO
         List<SalesReport> GetSalesReportsByMedicineId(int medicineId);
         void InsertSalesReport(SalesReport salesReport);
         int CountTotalSalesReports();
+
+        List<SalesReport> GetAllSalesReports();
     }
 }

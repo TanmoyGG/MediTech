@@ -8,13 +8,14 @@ namespace MediTech.Model
         {
         }
 
-        public SalesReport(DateTime reportDateTime, int mId, string mName, decimal price, string pName)
+        public SalesReport(DateTime reportDateTime, int mId, string mName, decimal price, string pName, int quantity)
         {
             ReportDateTime = reportDateTime;
             M_Id = mId;
             M_Name = mName;
             Price = price;
             P_Name = pName;
+            Quantity = quantity;
         }
 
         public int Report_Id { get; set; }
@@ -23,5 +24,6 @@ namespace MediTech.Model
         public string M_Name { get; set; }
         public decimal Price { get; set; }
         public string P_Name { get; set; }
+        public int Quantity { get; set; }
     }
 }

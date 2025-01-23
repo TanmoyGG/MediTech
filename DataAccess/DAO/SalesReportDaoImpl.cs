@@ -70,6 +70,7 @@ namespace MediTech.DataAccess.DAO
                     command.Parameters.AddWithValue("@M_Name", salesReport.M_Name);
                     command.Parameters.AddWithValue("@Price", salesReport.Price);
                     command.Parameters.AddWithValue("@P_Name", salesReport.P_Name);
+                    command.Parameters.AddWithValue("@Quantity", salesReport.Quantity);
                     command.ExecuteNonQuery();
                 }
             });
@@ -93,11 +94,29 @@ namespace MediTech.DataAccess.DAO
                 reader.GetInt32(reader.GetOrdinal("M_Id")),
                 reader.GetString(reader.GetOrdinal("M_Name")),
                 reader.GetDecimal(reader.GetOrdinal("Price")),
-                reader.GetString(reader.GetOrdinal("P_Name"))
+                reader.GetString(reader.GetOrdinal("P_Name")),
+                reader.GetInt32(reader.GetOrdinal("Quantity"))
+
             )
             {
                 Report_Id = reader.GetInt32(reader.GetOrdinal("Report_Id"))
             };
+        }
+
+        public List<SalesReport>GetAllSalesReports()
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                var reports = new List<SalesReport>();
+                using (var command = new SqlCommand(SalesReportQueries.GET_ALL_SALES_REPORTS, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) reports.Add(MapToSalesReport(reader));
+                    }
+                }
+                return reports;
+            });
         }
     }
 }

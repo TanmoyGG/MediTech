@@ -38,5 +38,9 @@ namespace MediTech.DataAccess.Controller
         {
             return _salesReportDAO.CountTotalSalesReports();
         }
+        public List<SalesReport> GetAllReports()
+        {
+            return _salesReportDAO.GetAllSalesReports();
+        }
     }
 }

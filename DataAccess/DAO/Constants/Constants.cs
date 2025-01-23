@@ -131,8 +131,10 @@
         public const string GET_SALES_REPORT_BY_MEDICINE_NAME = "SELECT * FROM SalesReport WHERE M_Name = @M_Name";
 
         public const string INSERT_SALES_REPORT =
-            "INSERT INTO SalesReport (M_Id, M_Name, Price, P_Name) VALUES (@M_Id, @M_Name, @Price, @P_Name)";
-
+            "INSERT INTO SalesReport (M_Id, M_Name, Price, P_Name, Quantity) VALUES (@M_Id, @M_Name, @Price, @P_Name, @Quantity)";
         public const string COUNT_TOTAL_SALES_REPORTS = "SELECT COUNT(*) FROM SalesReport";
+        public const string GET_SALES_REPORT_BY_PARTIAL_NAME =
+            "SELECT * FROM SalesReport WHERE M_Name LIKE '%' + @M_Name + '%'"; // Retained for partial matching
+        public const string GET_ALL_SALES_REPORTS = "SELECT * FROM SalesReport";
     }
 }

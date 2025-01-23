@@ -178,6 +178,36 @@ namespace MediTech.PharmacistUC
             print.FooterSpacing = 15;
             print.PrintDataGridView(guna2DataGridView1);
 
+            // Database insertion in sales report table
+            try
+            {
+                SalesReportController salesReportController = new SalesReportController(new SalesReportDAOImpl());
+                foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+                {
+                    if (row.Cells["Column1"].Value != null && row.Cells["Column2"].Value != null &&
+                        row.Cells["Column6"].Value != null && row.Cells["Column5"].Value != null)
+                    {
+                        SalesReport salesReport = new SalesReport
+                        {
+                            M_Id = Convert.ToInt32(row.Cells["Column1"].Value),
+                            M_Name = row.Cells["Column2"].Value.ToString(),
+                            Price = Convert.ToDecimal(row.Cells["Column6"].Value),
+                            P_Name = globalVariable.ChemistLogin.P_Name, 
+                            Quantity = Convert.ToInt32(row.Cells["Column5"].Value),
+                            ReportDateTime = DateTime.Now
+                        };
+
+                        salesReportController.AddSalesReport(salesReport);
+                    }
+                }
+
+                MessageBox.Show("Sales report successfully added to the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while saving sales report: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             totalAmount = 0;
             labelPrice.Text = "Tk 0";
             guna2DataGridView1.Rows.Clear();
