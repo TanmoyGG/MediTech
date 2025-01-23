@@ -114,6 +114,9 @@
         public const string COUNT_TOTAL_VALID_MEDICINES = "SELECT COUNT(*) FROM Medicine WHERE ExpDate > GETDATE()";
         
         public const string COUNT_TOTAL_EXPIRED_MEDICINES = "SELECT COUNT(*) FROM Medicine WHERE ExpDate < GETDATE()";
+
+        public const string GET_VALID_MEDICINES_BY_PARTIAL_NAME =
+            "SELECT * FROM Medicine WHERE M_Name LIKE '%' + @M_Name + '%' AND ExpDate > GETDATE()";
     }
 
     public static class SalesReportQueries

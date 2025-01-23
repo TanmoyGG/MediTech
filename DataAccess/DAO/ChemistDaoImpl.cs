@@ -221,5 +221,22 @@ namespace MediTech.DataAccess.DAO
                 P_Id = int.Parse(record["P_Id"].ToString())
             };
         }
+
+        public List<Chemist> SearchChemist(string name)
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                var chemists = new List<Chemist>();
+                using (var cmd = new SqlCommand(ChemistQueries.GET_CHEMIST_BY_PARTIAL_NAME, connection))
+                {
+                    cmd.Parameters.AddWithValue("@P_Name", name);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read()) chemists.Add(MapToChemist(reader));
+                    }
+                }
+                return chemists;
+            });
+        }
     }
 }

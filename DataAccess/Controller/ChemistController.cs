@@ -79,5 +79,10 @@ namespace MediTech.DataAccess.Controller
         {
             return _chemistDao.GetAllChemists();
         }
+
+        public List<Chemist> SearchChemist(string name)
+        {
+            return _chemistDao.SearchChemist(name);
+        }
     }
 }

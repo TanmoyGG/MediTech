@@ -21,6 +21,21 @@ namespace MediTech.AdministratorUC
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            //for admin
+            IAdminDAO adminDao = new AdminDaoImpl();
+            var adminController = new AdminController(adminDao);
+            var allAdmins = adminController.SearchAdmin(txtSearch.Text);
+            guna2DataGridView1.AutoGenerateColumns = true;
+            guna2DataGridView1.DataSource = allAdmins.ToList();
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+            //for pharmacist
+            IChemistDAO chemistDao = new ChemistDaoImpl();
+            var chemistController = new ChemistController(chemistDao);
+            var allChemists = chemistController.SearchChemist(txtSearch.Text);
+            guna2DataGridView2.AutoGenerateColumns = true;
+            guna2DataGridView2.DataSource = allChemists.ToList();
+            guna2DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
 
         private void UcViewUser_Load(object sender, EventArgs e)

@@ -240,6 +240,20 @@ namespace MediTech.DataAccess.DAO
             });
         }
 
+        public List<Medicine> SearchValidMedicine(string name)
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                using (var command =
+                       new SqlCommand(MedicineQueries.GET_VALID_MEDICINES_BY_PARTIAL_NAME,
+                           connection))
+                {
+                    command.Parameters.AddWithValue("@M_Name", name ?? string.Empty);
+                    return GetMedicinesFromReader(command);
+                }
+            });
+        }
+
         private List<Medicine> GetMedicinesByQuery(string query)
         {
             return SqlDatabaseManager.Instance.Execute(connection =>

@@ -68,9 +68,9 @@ namespace MediTech.Controller
             return _adminDAO.ValidateAdminLogin(usernameOrEmail, password);
         }
         
-        /*public List<Admin> GetMedicineByPartialCriteria(string name)
+        public List<Admin> SearchAdmin(string name)
         {
             return _adminDAO.SearchAdmin(name);
-        }*/
+        }
     }
 }

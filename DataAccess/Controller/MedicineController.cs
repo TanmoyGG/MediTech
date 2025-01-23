@@ -88,7 +88,11 @@ namespace MediTech.DataAccess.Controller
         {
             return _medicineDao.SearchMedicine(name);
         }
-        
+        public List<Medicine> GetValidMedicineByPartialCriteria(string name)
+        {
+            return _medicineDao.SearchValidMedicine(name);
+        }
+
         public int CountTotalValidMedicines()
         {
             return _medicineDao.CountTotalValidMedicines();

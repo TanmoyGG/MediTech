@@ -183,6 +183,22 @@ namespace MediTech.PharmacistUC
             guna2DataGridView1.Rows.Clear();
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            IMedicineDAO medicineDao = new MedicineDAOImpl();
+            MedicineController medicineController = new MedicineController(medicineDao);
+            
+            var filteredMedicines = medicineController.GetValidMedicineByPartialCriteria(txtSearch.Text);
+
+            listBox1.Items.Clear();
+
+            foreach (var medicine in filteredMedicines)
+            {
+                listBox1.Items.Add(medicine.M_Name);
+            }
+
+        }
+
         private void addToCart()
         {
             try

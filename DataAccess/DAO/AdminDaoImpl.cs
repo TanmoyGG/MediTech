@@ -214,31 +214,21 @@ namespace MediTech.DataAccess.DAO
                 A_UserName = reader["A_UserName"].ToString()
             };
         }
-        
-        /*public List<Admin> SearchAdmin(string name)
+        public List<Admin> SearchAdmin(string name)
         {
             return SqlDatabaseManager.Instance.Execute(connection =>
             {
-                using (var command =
-                       new SqlCommand(MedicineQueries.GET_MEDICINE_BY_PARTIAL_NAME,
-                           connection))
+                var admins = new List<Admin>();
+                using (var cmd = new SqlCommand(AdminQueries.GET_ADMIN_BY_PARTIAL_NAME, connection))
                 {
-                    command.Parameters.AddWithValue("@M_Name", name ?? string.Empty);
-                    return GetAdminsFromReader(command);
+                    cmd.Parameters.AddWithValue("@A_Name", name);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read()) admins.Add(MapToAdmin(reader));
+                    }
                 }
+                return admins;
             });
-        }*/
-        
-        /*private List<Admin> GetAdminsFromReader(SqlCommand command)
-        {
-            var Admins = new List<Admin>();
-
-            using (var reader = command.ExecuteReader())
-            {
-                while (reader.Read()) Admins.Add(MapToAdmin(reader));
-            }
-
-            return Admins;
-        }*/
+        }
     }
 }
