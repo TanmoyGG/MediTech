@@ -1,7 +1,9 @@
-﻿using MediTech.DataAccess.Controller;
+﻿using DGVPrinterHelper;
+using MediTech.DataAccess.Controller;
 using MediTech.DataAccess.DAO;
 using MediTech.Model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MediTech.PharmacistUC
@@ -103,6 +105,151 @@ namespace MediTech.PharmacistUC
             {
                 MessageBox.Show("Error in calculating total price: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            addToCart();
+        }
+
+        double valueAmount;
+        int valueId;
+        int noOfUnit;
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                valueAmount = double.Parse(guna2DataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                valueId = int.Parse(guna2DataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                noOfUnit = int.Parse(guna2DataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message);
+            }
+        }
+
+        protected int n, totalAmount = 0;
+        protected Int64 quantity, newQuantity;
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (valueId != 0)
+            {
+                try
+                {
+                    guna2DataGridView1.Rows.RemoveAt(this.guna2DataGridView1.SelectedRows[0].Index);
+                }
+                catch (Exception)
+                {
+                }
+                finally
+                {
+                    IMedicineDAO medicineDao = new MedicineDAOImpl();
+                    MedicineController medicineController = new MedicineController(medicineDao);
+                    Medicine selectedMedicine = medicineController.GetMedicineById(valueId);
+
+                    selectedMedicine.Quantity += noOfUnit;
+                    medicineController.UpdateMedicine(selectedMedicine);
+                    labelPrice.Text = "Tk " + (double.Parse(labelPrice.Text.Replace("Tk ", "")) - valueAmount).ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Row not selected!");
+            }
+        }
+
+        private void btnSellAndPrint_Click(object sender, EventArgs e)
+        {
+            DGVPrinter print = new DGVPrinter();
+            print.Title = "Medicine Bill from MediTech Pharma";
+            print.SubTitle = String.Format("Date: {0:yyyy-MM-dd} Time: {1:hh\\:mm}", DateTime.Now, DateTime.Now.TimeOfDay + "\nTotal Payable Amount : " + labelPrice.Text);
+            print.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            print.PageNumbers = true;
+            print.PageNumberInHeader = false;
+            print.PorportionalColumns = true;
+            print.HeaderCellAlignment = StringAlignment.Near;
+            print.Footer = "Software created by Homo Sapiens";
+            print.FooterSpacing = 15;
+            print.PrintDataGridView(guna2DataGridView1);
+
+            totalAmount = 0;
+            labelPrice.Text = "Tk 0";
+            guna2DataGridView1.Rows.Clear();
+        }
+
+        private void addToCart()
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(txtMediID.Text) )
+                {
+                    MessageBox.Show("Please select a medicine first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtNoOfUnit.Text, out int enteredQuantity) || enteredQuantity <= 0)
+                {
+                    MessageBox.Show("Please enter a valid quantity.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                IMedicineDAO medicineDao = new MedicineDAOImpl();
+                MedicineController medicineController = new MedicineController(medicineDao);
+                Medicine selectedMedicine = medicineController.GetMedicineById(int.Parse(txtMediID.Text));
+
+                if (selectedMedicine == null)
+                {
+                    MessageBox.Show("Medicine not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (selectedMedicine.Quantity < enteredQuantity)
+                {
+                    MessageBox.Show("Not enough stock available.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Update stock and add to the grid
+                selectedMedicine.Quantity -= enteredQuantity;
+                medicineController.UpdateMedicine(selectedMedicine);
+
+                n = guna2DataGridView1.Rows.Add();
+                guna2DataGridView1.Rows[n].Cells[0].Value = selectedMedicine.M_Id;
+                guna2DataGridView1.Rows[n].Cells[1].Value = selectedMedicine.M_Name;
+                guna2DataGridView1.Rows[n].Cells[2].Value = selectedMedicine.ExpDate.ToString("yyyy-MM-dd");
+                guna2DataGridView1.Rows[n].Cells[3].Value = selectedMedicine.Price;
+                guna2DataGridView1.Rows[n].Cells[4].Value = enteredQuantity;
+                guna2DataGridView1.Rows[n].Cells[5].Value = (selectedMedicine.Price * enteredQuantity).ToString();
+
+                // Update total amount
+                totalAmount += (int)(selectedMedicine.Price * enteredQuantity);
+                labelPrice.Text = $"Tk {totalAmount}";
+
+                MessageBox.Show("Added to cart successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadValidMedicine();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding to cart: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Cleartxt();
+        }
+        private void Cleartxt()
+        {
+            txtMediID.Clear();
+            txtMediName.Clear();
+            txtMediExpDate.ResetText();
+            txtPricePerUnit.Clear();
+            txtNoOfUnit.Clear();
+            txtTotalPrice.Clear();
         }
     }
 }
