@@ -96,5 +96,10 @@ namespace MediTech.AdministratorUC
                 MessageBox.Show(@"Please select a row to delete.");
             }
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            UcViewUser_Load(this,null);
+        }
     }
 }
