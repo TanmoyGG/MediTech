@@ -78,7 +78,19 @@ namespace MediTech.DataAccess.DAO
 
         public List<Medicine> GetValidMedicines()
         {
-            return GetMedicinesByQuery(MedicineQueries.GET_VALID_MEDICINES);
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                var medicines = new List<Medicine>();
+                using (var command = new SqlCommand(MedicineQueries.GET_VALID_MEDICINES, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) medicines.Add(MapToMedicine(reader));
+                    }
+                }
+
+                return medicines;
+            });
         }
 
         public List<Medicine> GetMedicinesByDateRange(DateTime startDate, DateTime endDate)
