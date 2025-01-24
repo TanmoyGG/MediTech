@@ -8,7 +8,7 @@
   <!--<Password>admin123</Password>-->
 
   <!-- If using LocalDB -->
-  <DatabaseFilePath>C:\Users\Siam\Documents\PracticeDB.mdf</DatabaseFilePath>
+  <DatabaseFilePath>your\database\file\path</DatabaseFilePath>
   
   <!-- SMTP Configuration for Gmail -->
   <SMTP>
