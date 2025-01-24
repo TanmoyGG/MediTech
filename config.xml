@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <!-- If using SQL Server -->
+  <!-- Uncomment and provide the server details -->
+  <!--<SqlServerName>localhost\SQLEXPRESS</SqlServerName>-->
+  <!--<DatabaseName>PracticeDB</DatabaseName>-->
+  <!--<UserId>admin</UserId>-->
+  <!--<Password>admin123</Password>-->
+
+  <!-- If using LocalDB -->
+  <DatabaseFilePath>C:\Users\Siam\Documents\PracticeDB.mdf</DatabaseFilePath>
+  
+  <!-- SMTP Configuration for Gmail -->
+  <SMTP>
+    <Email>your-email@gmail.com</Email>
+    <AppPassword>your-app-password</AppPassword>
+    <SmtpServer>smtp.gmail.com</SmtpServer>
+    <Port>587</Port>
+  </SMTP>
+</configuration>
