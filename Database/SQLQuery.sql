@@ -47,6 +47,7 @@ CREATE TABLE SalesReport (
     M_Name NVARCHAR(100) NOT NULL,
     Price DECIMAL(10, 2) NOT NULL,
     P_Name NVARCHAR(100) NOT NULL,
+    Quantity INT NOT NULL,
     FOREIGN KEY (M_Id) REFERENCES Medicine(M_Id)
 );
 
