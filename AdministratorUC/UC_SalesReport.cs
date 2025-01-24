@@ -32,5 +32,16 @@ namespace MediTech.AdministratorUC
             guna2DataGridView1.DataSource = reports;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            ISalesReportDAO salesReportDao = new SalesReportDAOImpl();
+            SalesReportController salesReportController = new SalesReportController(salesReportDao);
+            var reports = salesReportController.SearchReports(txtSearch.Text);
+
+            guna2DataGridView1.AutoGenerateColumns = true;
+            guna2DataGridView1.DataSource = reports;
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        }
     }
 }

@@ -145,6 +145,7 @@
             this.txtSearch.Size = new System.Drawing.Size(215, 39);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // UcSalesReport
             // 

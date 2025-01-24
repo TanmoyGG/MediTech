@@ -118,5 +118,22 @@ namespace MediTech.DataAccess.DAO
                 return reports;
             });
         }
+
+        public List<SalesReport> SearchSalesReport(string P_name)
+        {
+            return SqlDatabaseManager.Instance.Execute(connection =>
+            {
+                var reports = new List<SalesReport>();
+                using (var command = new SqlCommand(SalesReportQueries.GET_SALES_REPORT_BY_PARTIAL_NAME, connection))
+                {
+                    command.Parameters.AddWithValue("@P_Name", P_name);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) reports.Add(MapToSalesReport(reader));
+                    }
+                }
+                return reports;
+            });
+        }
     }
 }
