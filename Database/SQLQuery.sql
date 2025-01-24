@@ -16,8 +16,8 @@ CREATE TABLE Admin (
     A_Password NVARCHAR(255) NOT NULL
 );
 
--- Pharmacist Table
-CREATE TABLE Pharmacist (
+-- Chemist Table
+CREATE TABLE Chemist (
     P_Id INT PRIMARY KEY IDENTITY(1,1),
     P_Email NVARCHAR(255) NOT NULL UNIQUE,
     P_Name NVARCHAR(100) NOT NULL,
