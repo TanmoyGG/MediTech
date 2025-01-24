@@ -1,9 +1,3 @@
-﻿-- Database: MediTech
-CREATE DATABASE MediTechDB;
-GO
-
-USE MediTechDB;
-GO
 
 -- Admin Table
 CREATE TABLE Admin (
